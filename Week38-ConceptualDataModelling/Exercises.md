@@ -37,6 +37,15 @@ Using the entity descriptions from Theory Section 12, create an ER diagram that 
 - The ER diagram (image or link to online tool)
 - A short written paragraph (3–5 sentences) explaining one design decision you made — for example, why OrderItem is a weak entity, or why `unit_price` is stored in OrderItem instead of being looked up from Product.
 
+> [!NOTE]
+> ***Your Answer***
+>
+> *(Write your answer here.)*
+>
+>
+>
+>
+
 ---
 
 ## Exercise 2: Theory Review Questions
@@ -154,6 +163,15 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 >
 
 12. A business rule states: "Every employee must belong to exactly one department, and every department must have at least one employee." Express this using min-max notation for both sides. *(Section 8)*
+
+> [!NOTE]
+> ***Your Answer***
+>
+> *(Write your answer here.)*
+>
+>
+>
+>
 
 ---
 
@@ -349,6 +367,10 @@ FitZone is a local gym and fitness center. They need a database to manage their 
 
 7. When equipment breaks, a **maintenance request** is created. Each request has an ID, request date, description of the problem, status ("open", "in progress", "closed"), and resolution date. Each request is for exactly one piece of equipment. One piece of equipment can have many maintenance requests over time.
 
+### Task
+
+1. Identify all entities and their attributes (including key attributes).
+
 > [!NOTE]
 > ***Your Answer***
 >
@@ -358,47 +380,40 @@ FitZone is a local gym and fitness center. They need a database to manage their 
 >
 >
 
-### Task
-
-1. Identify all entities and their attributes (including key attributes).
-> [!NOTE]
-> ***Your SQL***
->
-> ```sql
-> -- Write your query here
->
->
-> ```
 2. Identify all relationships with their cardinality and participation constraints.
+
 > [!NOTE]
-> ***Your SQL***
+> ***Your Answer***
 >
-> ```sql
-> -- Write your query here
+> *(Write your answer here.)*
 >
 >
-> ```
+>
+>
+
 3. Draw a complete ER diagram using crow's foot notation.
+
 > [!NOTE]
-> ***Your SQL***
+> ***Your Answer***
 >
-> ```sql
-> -- Write your query here
+> *(Add a link to your image here)*
 >
 >
-> ```
+>
+>
+
 4. Identify any entity that might be considered a weak entity or a junction/associative entity. Justify your answer.
+
 > [!NOTE]
-> ***Your SQL***
+> ***Your Answer***
 >
-> ```sql
-> -- Write your query here
+> *(Write your answer here.)*
 >
 >
-> ```
+>
+>
+
 5. Are there any M:N relationships? If so, what junction entity resolves them?
-
-
 
 > [!NOTE]
 > ***Your Answer***
@@ -453,7 +468,9 @@ a) State what the error is
 >
 >
 >
+
 b) Explain why it's a problem (reference the relevant theory section)
+
 > [!NOTE]
 > ***Your Answer***
 >
@@ -462,7 +479,9 @@ b) Explain why it's a problem (reference the relevant theory section)
 >
 >
 >
+
 c) Describe how to fix it
+
 > [!NOTE]
 > ***Your Answer***
 >
