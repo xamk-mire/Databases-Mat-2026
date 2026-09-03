@@ -1,6 +1,7 @@
 # Week 36 — Exercises & Project Task
 
-> [!IMPORTANT] How to Complete These Exercises
+> [!IMPORTANT]
+> ***How to Complete These Exercises***
 > Write your answers directly in the highlighted **Your Answer** / **Your SQL** fields below each task. Replace the placeholder text with your own work before submitting.
 
 These exercises accompany the Week 36 Theory material. Complete all sections.
@@ -200,30 +201,25 @@ Take a screenshot showing:
 Answer the following in your own words (write 2–3 sentences per point):
 
 1. List **3 specific problems** TrailShop would face if they kept using spreadsheets as their product catalog grows to 5,000+ items with 10 staff members.
-> [!NOTE] Your Answer
->
-> *(Write your answer here.)*
->
 
-
+   > [!NOTE]
+   > ***Your Answer***
+   >
+   > _(Write your answer here.)_
 
 2. List **3 benefits** of switching to a database system, explaining how each one solves a problem from your list above.
-> [!NOTE] Your Answer
->
-> *(Write your answer here.)*
->
 
-
+   > [!NOTE]
+   > ***Your Answer***
+   >
+   > _(Write your answer here.)_
 
 3. Explain the three-schema architecture in your own words. Why is the separation into three levels useful?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
-> *(Write your answer here.)*
->
->
->
->
+> _(Write your answer here.)_
 
 ---
 
@@ -236,98 +232,66 @@ Answer each question in 2–4 sentences. Reference the Theory material sections 
 **Q1.** What is the difference between data and information? Give a concrete example using TrailShop data.
 _(See Section 1 of this week's Theory material.)_
 
-
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
-> *(Write your answer here.)*
->
->
->
->
+> _(Write your answer here.)_
 
 **Q2.** List and explain three disadvantages of file-based data management systems. For each, describe how it would affect TrailShop specifically.
 _(See Section 2 of this week's Theory material.)_
 
-
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
-> *(Write your answer here.)*
->
->
->
->
+> _(Write your answer here.)_
 
 **Q3.** What is a DBMS? List four of its core functions.
 _(See Sections 3 and 4 of this week's Theory material.)_
 
-
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
-> *(Write your answer here.)*
->
->
->
->
+> _(Write your answer here.)_
 
 **Q4.** Explain program-data independence with a concrete example. Why is it important?
 _(See Section 5.2 of this week's Theory material.)_
 
-
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
-> *(Write your answer here.)*
->
->
->
->
+> _(Write your answer here.)_
 
 **Q5.** What is metadata? Give two examples of metadata for a `products` table.
 _(See Section 8 of this week's Theory material.)_
 
-
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
-> *(Write your answer here.)*
->
->
->
->
+> _(Write your answer here.)_
 
 **Q6.** What is the three-schema architecture? Name and briefly describe each level.
 _(See Section 3.3 of this week's Theory material.)_
 
-
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
-> *(Write your answer here.)*
->
->
->
->
+> _(Write your answer here.)_
 
 **Q7.** Explain the difference between logical data independence and physical data independence.
 _(See Section 3.4 of this week's Theory material.)_
 
-
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
-> *(Write your answer here.)*
->
->
->
->
+> _(Write your answer here.)_
 
 **Q8.** What is a transaction? Why is atomicity important? Give a TrailShop example.
 _(See Section 5.5 of this week's Theory material.)_
 
-
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
-> *(Write your answer here.)*
->
->
->
->
+> _(Write your answer here.)_
 
 ### True/False
 
@@ -339,13 +303,10 @@ For each statement, write **True** or **False** and correct any false statements
 4. PostgreSQL is a commercial, closed-source database system.
 5. The conceptual level of the three-schema architecture describes how data is physically stored on disk.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
-> *(Write True/False and corrections for all five statements above.)*
->
->
->
->
+> _(Write True/False and corrections for all five statements above.)_
 
 ### Matching Exercise
 
@@ -377,22 +338,21 @@ Match each term (1–10) with its definition (A–J).
 | I      | The ability to change storage or structure without affecting applications           |
 | J      | Atomicity, Consistency, Isolation, Durability — properties of reliable transactions |
 
-
-> [!NOTE] Your Answers
+> [!NOTE]
+> ***Your Answers***
 >
-> | # | Your Match |
-> |---|---|
-> | 1 | |
-> | 2 | |
-> | 3 | |
-> | 4 | |
-> | 5 | |
-> | 6 | |
-> | 7 | |
-> | 8 | |
-> | 9 | |
-> | 10 | |
->
+> | #   | Your Match |
+> | --- | ---------- |
+> | 1   |            |
+> | 2   |            |
+> | 3   |            |
+> | 4   |            |
+> | 5   |            |
+> | 6   |            |
+> | 7   |            |
+> | 8   |            |
+> | 9   |            |
+> | 10  |            |
 
 ---
 
@@ -415,13 +375,10 @@ Connect to PostgreSQL using psql and complete the following. Write down the comm
 
 5. Quit psql.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
-> *(Document the commands you used and summarize the output for each step.)*
->
->
->
->
+> _(Document the commands you used and summarize the output for each step.)_
 
 ### Exercise 3.2: Explore the System Catalog
 
@@ -442,13 +399,10 @@ WHERE table_schema = 'public';
 
 Why does the last query return no rows? What would you expect to see after creating tables in future weeks?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
-> *(Write your answer here.)*
->
->
->
->
+> _(Write your answer here.)_
 
 ### Exercise 3.3: Create and Drop a Test Database
 

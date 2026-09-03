@@ -1,6 +1,7 @@
 # Week 46 — Transactions and Concurrency: Exercises
 
-> [!IMPORTANT] How to Complete These Exercises
+> [!IMPORTANT]
+> ***How to Complete These Exercises***
 > Write your answers directly in the highlighted **Your Answer** / **Your SQL** fields below each task. Replace the placeholder text with your own work before submitting.
 
 ---
@@ -16,7 +17,8 @@ Write a complete transaction that processes a new order in TrailShop:
 3. Decrease `stock_quantity` for each ordered product.
 4. Include a check that stock doesn't go negative (if it would, ROLLBACK).
 5. Use a SAVEPOINT before the stock update step.
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -54,7 +56,8 @@ Document the behavior.
 1. Repeat Task 1.2, but set Session A to `REPEATABLE READ`. Does the non-repeatable read still occur?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -64,7 +67,8 @@ Document the behavior.
 2. In a REPEATABLE READ transaction, try to UPDATE a row that another transaction has already committed a change to. What error do you get?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -81,7 +85,8 @@ Answer in your own words (2–4 sentences each):
 
 1. What is a transaction, and why is it important for data integrity?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -92,7 +97,8 @@ Answer in your own words (2–4 sentences each):
 
 2. Explain the Atomicity property using a real-world example (not from the lecture notes).
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -101,7 +107,8 @@ Answer in your own words (2–4 sentences each):
 >
 3. What does Isolation guarantee? Why is it needed in a multi-user system?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -112,7 +119,8 @@ Answer in your own words (2–4 sentences each):
 
 4. What is the difference between COMMIT and ROLLBACK?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -123,7 +131,8 @@ Answer in your own words (2–4 sentences each):
 
 5. Explain what a SAVEPOINT is and give a scenario where it's useful.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -132,7 +141,8 @@ Answer in your own words (2–4 sentences each):
 >
 6. What is a dirty read? Why does PostgreSQL never allow it?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -143,7 +153,8 @@ Answer in your own words (2–4 sentences each):
 
 7. Describe the lost update problem. How can SELECT FOR UPDATE prevent it?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -154,7 +165,8 @@ Answer in your own words (2–4 sentences each):
 
 8. What is the default isolation level in PostgreSQL? What concurrency problems does it still allow?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -165,7 +177,8 @@ Answer in your own words (2–4 sentences each):
 
 9. Explain MVCC in one paragraph: what is it, and what advantage does it provide?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -176,7 +189,8 @@ Answer in your own words (2–4 sentences each):
 
 10. What is a deadlock, and how does PostgreSQL handle it when one is detected?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -219,7 +233,8 @@ Update the price of all products in the "Footwear" category by +10%. If any prod
 Delete a customer and all their associated data:
 1. Delete their order_items (for all their orders)
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -228,7 +243,8 @@ Delete a customer and all their associated data:
 >
 2. Delete their orders
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -237,7 +253,8 @@ Delete a customer and all their associated data:
 >
 3. Delete the customer record
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >

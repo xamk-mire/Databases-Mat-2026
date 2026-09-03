@@ -1,6 +1,7 @@
 # Week 37 — Exercises & Project Task
 
-> [!IMPORTANT] How to Complete These Exercises
+> [!IMPORTANT]
+> ***How to Complete These Exercises***
 > Write your answers directly in the highlighted **Your Answer** / **Your SQL** fields below each task. Replace the placeholder text with your own work before submitting.
 
 These exercises accompany the Week 37 Theory material. Complete all sections.
@@ -15,7 +16,8 @@ Using the `products`, `categories`, and `customers` tables shown in Section 2 of
 
 1. What is the primary key of the `products` table? Why is it a good choice?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -26,7 +28,8 @@ Using the `products`, `categories`, and `customers` tables shown in Section 2 of
 
 2. What is the primary key of the `categories` table?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -37,7 +40,8 @@ Using the `products`, `categories`, and `customers` tables shown in Section 2 of
 
 3. What is the foreign key in the `products` table? What does it reference?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -49,7 +53,8 @@ Using the `products`, `categories`, and `customers` tables shown in Section 2 of
 4. Is `name` in `products` a candidate key? Under what assumption? What would make it unsuitable as a primary key?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -58,7 +63,8 @@ Using the `products`, `categories`, and `customers` tables shown in Section 2 of
 >
 5. Give an example of a **superkey** for the `products` table that is NOT a candidate key. Explain why it's not minimal.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -68,7 +74,8 @@ Using the `products`, `categories`, and `customers` tables shown in Section 2 of
 
 6. Give an example of a **composite key** using a hypothetical `order_items` table. Explain why neither column alone would be sufficient.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -78,7 +85,8 @@ Using the `products`, `categories`, and `customers` tables shown in Section 2 of
 
 7. Is `email` in `customers` a candidate key? What makes it different from `customer_id` as a PK choice? *(See Section 6.9 on natural vs surrogate keys.)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -103,7 +111,8 @@ Example:
 
 Think about rules for customers, orders, and categories — not just products.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(List your 5 business rules with constraint types, table/column, and SQL syntax.)*
 >
@@ -149,7 +158,8 @@ INSERT INTO order_items (order_id, product_id, quantity, unit_price)
 VALUES (1001, 101, 0, 189.50);
 ```
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(For each statement A–H, write SUCCESS or FAIL and explain any violation.)*
 >
@@ -168,7 +178,8 @@ Consider the following scenario using the schema from Theory Section 9.8:
 
 2. Which foreign key action would you recommend for the TrailShop `products.category_id` → `categories.category_id` relationship? Justify your choice in 2–3 sentences.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -189,7 +200,8 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 
 **Q1.** Define the following terms in your own words: relation, tuple, attribute, domain. Give one TrailShop example for each.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -202,7 +214,8 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 **Q2.** What makes a candidate key different from a primary key? Can a table have more than one candidate key?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -215,7 +228,8 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 **Q3.** Explain entity integrity in your own words. Why can't a primary key be NULL?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -227,7 +241,8 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 
 **Q4.** What happens when referential integrity is violated? Give a concrete TrailShop example — show the SQL statement and the expected error.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -239,7 +254,8 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 
 **Q5.** Explain the difference between a surrogate key and a natural key. Give an example of each for a `books` table in a library database.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -252,7 +268,8 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 **Q6.** What is a NULL value? Why is `WHERE price = NULL` wrong? What should you write instead?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -264,7 +281,8 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 
 **Q7.** What is a junction table? When is it needed? Give an example.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -276,7 +294,8 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 
 **Q8.** Describe the three types of relationships (1:1, 1:N, M:N). For each, give one TrailShop example.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -289,7 +308,8 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 **Q9.** What is the difference between `ON DELETE CASCADE` and `ON DELETE RESTRICT`? When would you use each?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -301,7 +321,8 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 
 **Q10.** Explain what "atomic entries" means in the context of relation properties. Give an example of a violation.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -357,7 +378,8 @@ Match each term (1–12) with its definition (A–L).
 | L | A SQL function that returns the first non-NULL argument |
 
 
-> [!NOTE] Your Answers
+> [!NOTE]
+> ***Your Answers***
 >
 > | # | Your Match |
 > |---|---|
@@ -472,7 +494,8 @@ A small public library needs a database. Here is a description of their requirem
 5. **List the business rules** from the description and map each to a constraint type. Which rules cannot be enforced by simple constraints?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >

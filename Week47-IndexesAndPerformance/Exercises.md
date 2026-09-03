@@ -1,6 +1,7 @@
 # Week 47 — Exercises: Indexes and Query Performance
 
-> [!IMPORTANT] How to Complete These Exercises
+> [!IMPORTANT]
+> ***How to Complete These Exercises***
 > Write your answers directly in the highlighted **Your Answer** / **Your SQL** fields below each task. Replace the placeholder text with your own work before submitting.
 
 These exercises walk you through measuring, creating, and evaluating indexes on your TrailShop database. You will use PostgreSQL's `EXPLAIN ANALYZE` to gather real execution data and make evidence-based decisions about indexing.
@@ -71,7 +72,8 @@ Run the same five queries with `EXPLAIN ANALYZE` again. Fill in your comparison 
 
 Write a paragraph (4–6 sentences) recommending which indexes to keep in production and why. Consider table size, query frequency, and write overhead. If any index showed minimal improvement, explain why you might drop it.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -87,7 +89,8 @@ Answer the following questions in your own words. See the corresponding theory s
 
 **Question 1** — What is a database index, and why is it needed? (See Theory Section 1)
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -98,7 +101,8 @@ Answer the following questions in your own words. See the corresponding theory s
 
 **Question 2** — Explain the difference between B-tree search at O(log n) and sequential scan at O(n). If a table has 1,000,000 rows, approximately how many comparisons does each approach need? (See Theory Section 2)
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -109,7 +113,8 @@ Answer the following questions in your own words. See the corresponding theory s
 
 **Question 3** — PostgreSQL automatically creates indexes on primary keys. Why doesn't it also auto-index foreign key columns? (See Theory Section 3)
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -120,7 +125,8 @@ Answer the following questions in your own words. See the corresponding theory s
 
 **Question 4** — What is the difference between an Index Scan and an Index Only Scan? When can PostgreSQL use Index Only Scan? (See Theory Section 4)
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -131,7 +137,8 @@ Answer the following questions in your own words. See the corresponding theory s
 
 **Question 5** — Give three situations where you should NOT create an index. Explain each briefly. (See Theory Section 5)
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -142,7 +149,8 @@ Answer the following questions in your own words. See the corresponding theory s
 
 **Question 6** — What does `EXPLAIN ANALYZE` show that plain `EXPLAIN` does not? Why does this matter? (See Theory Section 6)
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -153,7 +161,8 @@ Answer the following questions in your own words. See the corresponding theory s
 
 **Question 7** — What is a partial index? Give one concrete example where a partial index on a TrailShop table would be useful. (See Theory Section 7)
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -175,7 +184,8 @@ SELECT * FROM orders WHERE customer_id = 5 AND order_date = '2026-01-15';
 
 (See Theory Section 8)
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -214,7 +224,8 @@ Execution Time: 0.312 ms
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -237,7 +248,8 @@ Execution Time: 0.041 ms
 - Execution time:
 - Is the index effective here?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -263,7 +275,8 @@ Execution Time: 0.132 ms
 - Execution time:
 - Why did PostgreSQL choose a Bitmap scan instead of a plain Index Scan?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -290,7 +303,8 @@ Execution Time: 1.340 ms
 - Execution time:
 - Would adding an index improve this join? Which column?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -406,7 +420,8 @@ CREATE INDEX idx_oi_order_id ON order_items (order_id);
 
 **Explanation:**
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -434,7 +449,8 @@ CREATE INDEX idx_products_cat_price ON products (category_id, price);
 
 **Explanation:**
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -462,7 +478,8 @@ CREATE UNIQUE INDEX idx_customers_email ON customers (email);
 
 **Explanation:**
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -493,7 +510,8 @@ CREATE INDEX idx_oi_order_id_covering ON order_items (order_id) INCLUDE (quantit
 
 **Explanation:**
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -521,7 +539,8 @@ CREATE INDEX idx_orders_pending ON orders (status) WHERE status = 'pending';
 
 **Explanation:**
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >

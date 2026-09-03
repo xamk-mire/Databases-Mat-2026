@@ -1,6 +1,7 @@
 # Week 39 — Logical Database Design: Exercises
 
-> [!IMPORTANT] How to Complete These Exercises
+> [!IMPORTANT]
+> ***How to Complete These Exercises***
 > Write your answers directly in the highlighted **Your Answer** / **Your SQL** fields below each task. Replace the placeholder text with your own work before submitting.
 
 These exercises accompany the Week 39 Theory material. Refer to the theory sections indicated in brackets when you need help.
@@ -51,7 +52,8 @@ After creating the tables, insert sample data:
 
 Verify that your constraints work by attempting at least 2 invalid inserts and showing the error messages.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Paste key CREATE TABLE statements or link to your .sql file contents here
@@ -59,7 +61,8 @@ Verify that your constraints work by attempting at least 2 invalid inserts and s
 >
 > ```
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Paste written justifications for data types, FK actions, and design decisions here.)*
 >
@@ -73,7 +76,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 1. List the seven phases of the database development lifecycle in order. Which phase is this week's focus? *(Section 1)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -83,7 +87,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 2. Explain the transformation rule for mapping a 1:N relationship to the relational model. Why is the foreign key placed on the "many" side? *(Section 3.2)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -93,7 +98,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 3. What is a junction table? When is it needed? Give an example not from TrailShop. *(Section 3.3)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -103,7 +109,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 4. When mapping a 1:1 relationship, how do you decide which table gets the foreign key? *(Section 3.4)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -113,7 +120,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 5. How does the mapping of a weak entity differ from a strong entity? What happens to the primary key? *(Section 3.5)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -123,7 +131,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 6. Why should you never use `REAL` or `DOUBLE PRECISION` for monetary values? What should you use instead? *(Section 4.1)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -132,7 +141,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 >
 
 7. What is the difference between `TIMESTAMP` and `TIMESTAMPTZ`? Which should you prefer and why? *(Section 4.3)*
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -141,7 +151,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 
 8. Explain the difference between `CASCADE` and `RESTRICT` as foreign key delete actions. Give a scenario where each is appropriate. *(Section 6)*
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -150,7 +161,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 
 9. What is an insertion anomaly? Give an example and explain how proper schema design prevents it. *(Section 7)*
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -159,7 +171,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 
 10. What is the difference between a surrogate key and a natural key? Give one advantage of each. *(Section 9)*
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -169,7 +182,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 11. Why does PostgreSQL fold unquoted identifiers to lowercase? How does `snake_case` naming help? *(Section 8)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -178,7 +192,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 >
 
 12. What does `SET NULL` do as a foreign key action? When would you use it instead of `CASCADE`? *(Section 6)*
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -219,7 +234,8 @@ A hotel booking system has the following entities and relationships:
 3. Create the tables in the correct dependency order.
 4. Explain why Room is a weak entity and how its PK reflects this.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your CREATE TABLE statements here
@@ -227,7 +243,8 @@ A hotel booking system has the following entities and relationships:
 >
 > ```
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Explain why Room is a weak entity and how its PK reflects this.)*
 >
@@ -239,7 +256,8 @@ A hotel booking system has the following entities and relationships:
 
 ## Exercise 4: Data Type Selection
 
-> [!NOTE] Your Answers
+> [!NOTE]
+> ***Your Answers***
 > Fill in the **Your Data Type** and **Justification** columns in the table below.
 >
 
@@ -281,7 +299,8 @@ For each business rule below, write the appropriate PostgreSQL constraint. Provi
 
 5. "Order status can only be one of: 'new', 'confirmed', 'shipped', 'delivered', 'returned'."
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write constraints 1–5 here
@@ -297,7 +316,8 @@ For each business rule below, write the appropriate PostgreSQL constraint. Provi
 
 8. "A discount percentage must be between 0 and 100, inclusive."
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write constraints 6–8 here
@@ -315,7 +335,8 @@ For each business rule below, write the appropriate PostgreSQL constraint. Provi
 
 12. "When a course is deleted, all enrollments for that course should be removed."
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write constraints 9–12 here

@@ -1,6 +1,7 @@
 # Week 48 — Exercises: Database Administration, Security, and NoSQL
 
-> [!IMPORTANT] How to Complete These Exercises
+> [!IMPORTANT]
+> ***How to Complete These Exercises***
 > Write your answers directly in the highlighted **Your Answer** / **Your SQL** fields below each task. Replace the placeholder text with your own work before submitting. This week includes the **last required TrailShop project work** — complete the weekly tasks and the final project submission at the end of this file.
 
 These exercises let you practice the core topics from this week: managing access with roles and privileges, backing up and restoring databases, defending against SQL injection, and exploring NoSQL concepts — including PostgreSQL's own JSONB support. Work through them in order; the TrailShop project task builds on everything else.
@@ -57,7 +58,8 @@ GRANT SELECT, INSERT, UPDATE ON customers TO ts_app;
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -121,7 +123,8 @@ DROP TABLE products;
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -212,7 +215,8 @@ def search_products(search_term):
 
 **Explain the difference:** In the vulnerable version, user input is pasted directly into the SQL string, so the database cannot distinguish between code and data. In the parameterized version, the query structure is sent separately from the values — the database knows exactly which parts are SQL and which are data, making injection impossible.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -272,7 +276,8 @@ CREATE TABLE reviews (
 3. **Write flexibility:** Adding a new field (e.g., `helpful_count`) is trivial in the document — just include it. In the relational model you need an `ALTER TABLE`.
 4. **Querying across reviews:** "Find all reviews with rating >= 4" is a simple `WHERE` clause in the relational model but requires reaching into nested arrays in the document model.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -290,7 +295,8 @@ Answer each question in your own words. Refer back to the lecture material when 
    *(Hint: In modern PostgreSQL, the distinction is simpler than you might expect.)*
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -300,7 +306,8 @@ Answer each question in your own words. Refer back to the lecture material when 
 2. **What does `GRANT USAGE ON SCHEMA` do, and why is it needed before granting table-level privileges?**
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -311,7 +318,8 @@ Answer each question in your own words. Refer back to the lecture material when 
    *(Hint: think about tables that will be created in the future.)*
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -322,7 +330,8 @@ Answer each question in your own words. Refer back to the lecture material when 
    *(Consider: what does each one back up?)*
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -332,7 +341,8 @@ Answer each question in your own words. Refer back to the lecture material when 
 5. **Explain how SQL injection works in 2–3 sentences.**
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -343,7 +353,8 @@ Answer each question in your own words. Refer back to the lecture material when 
    *(What fundamental problem do they solve?)*
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -354,7 +365,8 @@ Answer each question in your own words. Refer back to the lecture material when 
    *(Document, key-value, column-family, graph — what is each good at?)*
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -365,7 +377,8 @@ Answer each question in your own words. Refer back to the lecture material when 
    *(Briefly explain the three properties and the trade-off.)*
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -376,7 +389,8 @@ Answer each question in your own words. Refer back to the lecture material when 
    *(Think about storage, indexing, and performance.)*
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -389,7 +403,8 @@ Answer each question in your own words. Refer back to the lecture material when 
 ---
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -426,7 +441,8 @@ SELECT * FROM products WHERE category = 'Shoes' OR '1'='1' --' AND price >= 10
 
 The `--` comments out the rest, and `'1'='1'` is always true — the attacker sees every product.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -470,7 +486,8 @@ SELECT * FROM customers WHERE email = 'admin@trailshop.com' --' AND password_has
 
 The password check is commented out entirely — the attacker logs in as any user.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -517,7 +534,8 @@ VALUES ('Anna', 'Smith', 'test@x.com'); DELETE FROM customers; --')
 
 The attacker's input closes the INSERT and adds a DELETE that wipes the entire customers table.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -654,7 +672,8 @@ Write your own analysis using these five points as a starting framework:
 
 5. **Data integrity:** The relational model guarantees (via foreign keys) that every comment references a real post and a real user. Documents have no such built-in enforcement — an application bug could create orphaned or inconsistent data.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >

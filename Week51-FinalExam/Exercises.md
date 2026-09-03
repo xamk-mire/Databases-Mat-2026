@@ -1,6 +1,7 @@
 # Week 51 — Final Exam — Exercises (Optional)
 
-> [!IMPORTANT] Exam Preparation
+> [!IMPORTANT]
+> ***Exam Preparation***
 > These exercises are for your own exam preparation. **No submission is required.** The TrailShop project was submitted in Week 48.
 
 ## Practice Exam
@@ -13,7 +14,8 @@ This mini mock exam simulates the format and difficulty of the final exam. Time 
 
 **A1.** Explain the difference between a *candidate key* and a *primary key*. Give an example using a table of your choice.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -31,7 +33,8 @@ Example: In a `customers` table, both `customer_id` and `email` might be candida
 
 **A2.** What are the ACID properties of transactions? Briefly explain each one.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -50,7 +53,8 @@ Example: In a `customers` table, both `customer_id` and `email` might be candida
 
 **A3.** A colleague suggests: "Let's just put all our data in one big table instead of splitting it into many tables." Explain at least 3 problems with this approach.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -70,7 +74,8 @@ Example: In a `customers` table, both `customer_id` and `email` might be candida
 
 **A4.** What is the difference between `WHERE` and `HAVING`? Why can't you use aggregate functions in `WHERE`?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -86,7 +91,8 @@ Example: In a `customers` table, both `customer_id` and `email` might be candida
 
 **A5.** Explain what an index is and describe one situation where adding an index would *hurt* performance rather than help.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -94,7 +100,8 @@ Example: In a `customers` table, both `customer_id` and `email` might be candida
 >
 >
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -126,7 +133,8 @@ order_items(item_id PK, order_id FK, product_id FK, quantity, unit_price)
 
 **B1.** Write a query to find the total revenue (sum of quantity × unit_price) for each category, showing only categories with revenue above €1000. Sort by revenue descending.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -134,7 +142,8 @@ order_items(item_id PK, order_id FK, product_id FK, quantity, unit_price)
 >
 >
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -159,7 +168,8 @@ ORDER BY total_revenue DESC;
 
 **B2.** Write a query to find customers who have placed orders but have never ordered anything from the 'Camping' category. Use EXISTS or NOT EXISTS.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -167,7 +177,8 @@ ORDER BY total_revenue DESC;
 >
 >
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -198,7 +209,8 @@ AND NOT EXISTS (
 
 **B3.** Create a table `wishlists` where each customer can add products to their wishlist. A customer cannot add the same product twice. Include appropriate constraints.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -206,7 +218,8 @@ AND NOT EXISTS (
 >
 >
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -230,7 +243,8 @@ CREATE TABLE wishlists (
 
 **B4.** Write a transaction that creates a new order for customer 1, adds two items, and decreases the stock for each product. Use a SAVEPOINT.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -238,7 +252,8 @@ CREATE TABLE wishlists (
 >
 >
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -275,7 +290,8 @@ COMMIT;
 
 **B5.** Write a CTE that calculates each customer's total spending and their rank among all customers, then return only the top 5.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -283,7 +299,8 @@ COMMIT;
 >
 >
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -316,7 +333,8 @@ WHERE spending_rank <= 5;
 
 **C1.** The following table stores order information:
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -332,7 +350,8 @@ orders_flat(order_id, order_date, customer_name, customer_email, customer_city,
 
 Identify the problems with this design and normalize it to 3NF. Show the resulting tables with their columns, primary keys, and foreign keys.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -364,7 +383,8 @@ Each table has no partial or transitive dependencies.
 
 **C2.** Given this table and functional dependencies, determine the highest normal form and normalize if needed:
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -382,7 +402,8 @@ FDs:
   warehouse_id → warehouse_city
 ```
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -409,7 +430,8 @@ warehouses(warehouse_id PK, warehouse_city)
 
 **C3.** A music streaming service needs to store: artists, albums, songs, playlists, and users. A song belongs to one album, an album belongs to one artist. Users can create playlists containing many songs; a song can be in many playlists. Design a normalized schema (show tables, columns, PKs, FKs, and relationship cardinalities).
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -448,7 +470,8 @@ playlist_songs(playlist_id FK→playlists, song_id FK→songs, position)
 
 **D1.** A banking application transfers €100 from Account A to Account B. Write the SQL transaction. Then explain what happens if the system crashes after the first UPDATE but before COMMIT.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -456,7 +479,8 @@ playlist_songs(playlist_id FK→playlists, song_id FK→songs, position)
 >
 >
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -481,7 +505,8 @@ COMMIT;
 
 **D2.** A query on the `order_items` table is slow. You run `EXPLAIN ANALYZE` and see a "Seq Scan" on 5 million rows with a filter on `product_id`. Propose a solution, write the SQL to implement it, and explain what trade-offs your solution introduces.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -489,7 +514,8 @@ COMMIT;
 >
 >
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here

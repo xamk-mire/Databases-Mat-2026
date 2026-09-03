@@ -1,6 +1,7 @@
 # Week 38 — Conceptual Data Modelling: Exercises
 
-> [!IMPORTANT] How to Complete These Exercises
+> [!IMPORTANT]
+> ***How to Complete These Exercises***
 > Write your answers directly in the highlighted **Your Answer** / **Your SQL** fields below each task. Replace the placeholder text with your own work before submitting.
 
 These exercises accompany the Week 38 Theory material. Refer to the theory sections indicated in brackets when you need help.
@@ -44,7 +45,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 1. Why should you create a conceptual data model before writing SQL? Give two specific reasons. *(Section 1)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -54,7 +56,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 2. What is the difference between the conceptual level and the logical level of a data model? *(Section 2)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -64,7 +67,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 3. Explain logical data independence with an example. *(Section 3)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -74,7 +78,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 4. Explain physical data independence with an example. *(Section 3)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -84,7 +89,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 5. What is the difference between a strong entity and a weak entity? Give one example of each (not from TrailShop). *(Section 5)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -94,7 +100,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 6. What is a composite attribute? How does it differ from a multivalued attribute? Give an example of each. *(Section 6)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -104,7 +111,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 7. What is a derived attribute? Why is it usually not stored in the database? *(Section 6)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -113,7 +121,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 >
 
 8. Explain the difference between a binary relationship and a unary (recursive) relationship. Give an example of each. *(Section 7)*
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -122,7 +131,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 
 9. What is the difference between an identifying relationship and a non-identifying relationship? How does this affect the child table's primary key? *(Section 7)*
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -134,7 +144,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section.
 
 11. Why can't a many-to-many (M:N) relationship be directly implemented in a relational database? What is the solution? *(Section 10)*
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -182,7 +193,8 @@ Relationships (in crow's foot):
 **Questions:**
 
 a) Can an author exist without having written any books? Explain using the notation.
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -191,7 +203,8 @@ a) Can an author exist without having written any books? Explain using the notat
 >
 
 b) Can a book exist without being loaned? Explain using the notation.
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -202,7 +215,8 @@ b) Can a book exist without being loaned? Explain using the notation.
 c) What type of entity is Loan in this diagram? Is it a junction/associative entity? Why?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -213,7 +227,8 @@ c) What type of entity is Loan in this diagram? Is it a junction/associative ent
 d) What is the cardinality of the Author-Book relationship? Is this realistic? What might be a more accurate model?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -224,7 +239,8 @@ d) What is the cardinality of the Author-Book relationship? Is this realistic? W
 e) What attributes would you add to the Loan entity?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -254,7 +270,8 @@ Relationships:
 a) Can a student exist without being enrolled in any course?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -265,7 +282,8 @@ a) Can a student exist without being enrolled in any course?
 b) Can a course exist without having any enrolled students?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -276,7 +294,8 @@ b) Can a course exist without having any enrolled students?
 c) What is the cardinality between Student and Course (through Enrollment)?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -287,7 +306,8 @@ c) What is the cardinality between Student and Course (through Enrollment)?
 d) Can a teacher exist without teaching any courses?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -298,7 +318,8 @@ d) Can a teacher exist without teaching any courses?
 e) Is the Teacher-Course relationship 1:1 or 1:N? What does this imply about team teaching?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -328,7 +349,8 @@ FitZone is a local gym and fitness center. They need a database to manage their 
 
 7. When equipment breaks, a **maintenance request** is created. Each request has an ID, request date, description of the problem, status ("open", "in progress", "closed"), and resolution date. Each request is for exactly one piece of equipment. One piece of equipment can have many maintenance requests over time.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -339,7 +361,8 @@ FitZone is a local gym and fitness center. They need a database to manage their 
 ### Task
 
 1. Identify all entities and their attributes (including key attributes).
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -347,7 +370,8 @@ FitZone is a local gym and fitness center. They need a database to manage their 
 >
 > ```
 2. Identify all relationships with their cardinality and participation constraints.
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -355,7 +379,8 @@ FitZone is a local gym and fitness center. They need a database to manage their 
 >
 > ```
 3. Draw a complete ER diagram using crow's foot notation.
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -363,7 +388,8 @@ FitZone is a local gym and fitness center. They need a database to manage their 
 >
 > ```
 4. Identify any entity that might be considered a weak entity or a junction/associative entity. Justify your answer.
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -374,7 +400,8 @@ FitZone is a local gym and fitness center. They need a database to manage their 
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -418,7 +445,8 @@ The following ER diagram description contains **four errors**. Find each error, 
 Find the four errors in this design and for each one:
 
 a) State what the error is
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -426,7 +454,8 @@ a) State what the error is
 >
 >
 b) Explain why it's a problem (reference the relevant theory section)
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -434,7 +463,8 @@ b) Explain why it's a problem (reference the relevant theory section)
 >
 >
 c) Describe how to fix it
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >

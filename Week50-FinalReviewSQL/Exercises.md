@@ -1,6 +1,7 @@
 # Week 50 — Final Review: SQL — Exercises (Optional)
 
-> [!IMPORTANT] Optional Exam Preparation
+> [!IMPORTANT]
+> ***Optional Exam Preparation***
 > **No submission is required this week.** These exercises are self-paced practice for the final exam. Work through as many as you find helpful.
 
 ## 15 Progressive Practice Queries
@@ -11,7 +12,8 @@ These queries increase in complexity. Each builds on concepts from the theory. Y
 
 **Task:** List all products priced between €50 and €150, showing name and price, sorted by price.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -34,7 +36,8 @@ ORDER BY price;
 
 **Task:** Count the number of products in each category.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -58,7 +61,8 @@ ORDER BY product_count DESC;
 
 **Task:** Show all categories and their products, including categories with no products.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -81,7 +85,8 @@ ORDER BY c.category_name, p.product_name;
 
 **Task:** Find categories where the average product price exceeds €100.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -106,7 +111,8 @@ ORDER BY avg_price DESC;
 
 **Task:** Find products priced above the overall average price.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -129,7 +135,8 @@ ORDER BY price DESC;
 
 **Task:** List all orders with customer name, order date, and total order value.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -156,7 +163,8 @@ ORDER BY o.order_date DESC;
 
 **Task:** Find customers who have ordered at least one product from the 'Climbing' category.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -186,7 +194,8 @@ WHERE EXISTS (
 
 **Task:** Classify products into price tiers: 'Budget' (<50), 'Standard' (50–149.99), 'Premium' (150+).
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -213,7 +222,8 @@ ORDER BY price;
 
 **Task:** Use a CTE to find each customer's total spending, then show only the top 5.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -244,7 +254,8 @@ LIMIT 5;
 
 **Task:** Find products that have been ordered but never reviewed (assuming a `product_reviews` table exists).
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -270,7 +281,8 @@ JOIN product_reviews pr ON p.product_id = pr.product_id;
 
 **Task:** For each product, show its price and the maximum price in its category.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -295,7 +307,8 @@ ORDER BY category_id, price DESC;
 
 **Task:** Show all products with their review count (0 if never reviewed).
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -319,7 +332,8 @@ ORDER BY review_count DESC;
 
 **Task:** Show category statistics: product count, min/max/avg price, and total stock.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -348,7 +362,8 @@ ORDER BY c.category_name;
 
 **Task:** Find the category with the highest total revenue.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -378,7 +393,8 @@ LIMIT 1;
 
 **Task:** Find customers whose spending is above the average customer spending.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -420,7 +436,8 @@ These 5 queries introduce advanced concepts. They go slightly beyond exam expect
 
 **Task:** Rank products by price within each category. Show the rank and row number.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -446,7 +463,8 @@ ORDER BY category_id, price_rank;
 
 **Task:** Find the month with the highest revenue and show which products contributed most to that month's sales (top 3 products).
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -488,7 +506,8 @@ LIMIT 3;
 
 **Task:** Find pairs of products in the same category with a price difference of less than €10.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -519,7 +538,8 @@ ORDER BY price_difference;
 
 **Task:** Find discrepancies between the `products` table and an `inventory_audit` table — products missing from audit, audit entries without a matching product, and quantity mismatches.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -555,7 +575,8 @@ ORDER BY status, product;
 
 **Task:** Find customers who have ordered from every category in the database.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -600,7 +621,8 @@ FROM products
 WHERE category_id = 1;
 ```
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -636,7 +658,8 @@ FROM products
 WHERE cost > 100;
 ```
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -666,7 +689,8 @@ GROUP BY category_id
 WHERE AVG(price) > 50;
 ```
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -695,7 +719,8 @@ INSERT INTO products (product_name, price, stock_qty)
 VALUES ('Trail Pole', -15.00, 10);
 ```
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -723,7 +748,8 @@ FROM products p
 JOIN categories c ON p.category_id = categories.category_id;
 ```
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -751,7 +777,8 @@ DELETE products
 WHERE stock_qty = 0;
 ```
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -781,7 +808,8 @@ LIMIT 5
 OFFSET -2;
 ```
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -814,7 +842,8 @@ GROUP BY c.category_name
 HAVING cnt > 5;
 ```
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here

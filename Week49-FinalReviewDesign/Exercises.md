@@ -1,6 +1,7 @@
 # Week 49 — Exercises: Final Review — Database Design (Optional)
 
-> [!IMPORTANT] Optional Exam Preparation
+> [!IMPORTANT]
+> ***Optional Exam Preparation***
 > **No submission is required this week.** These exercises are for your own review before the final exam. Work through as many as you find helpful — skip any you do not need.
 
 These exercises bring together everything you have learned about database design throughout the course. You can optionally review your completed TrailShop schema, then tackle fresh design and normalization challenges similar to what you may see on the exam.
@@ -35,7 +36,8 @@ Make sure every table includes:
 - `CHECK`, `UNIQUE`, and `DEFAULT` constraints where they apply
 
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -48,7 +50,8 @@ Make sure every table includes:
 Draw (or update) an ER diagram that reflects the **final state** of your schema. Every table, column, and relationship should be visible. Use crow's foot notation for cardinalities. You can use any tool you like — draw.io, dbdiagram.io, Mermaid, or even pen and paper photographed.
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -64,7 +67,8 @@ Go through each table in your schema and confirm it is in **3NF**. For every tab
 - If you have a deliberate exception to 3NF (e.g., a denormalized column for performance), document **why** you kept it
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -85,7 +89,8 @@ Create a table or list that maps every constraint in your schema to the business
 Cover **all** your constraints — primary keys, foreign keys, NOT NULL, CHECK, UNIQUE, and DEFAULT.
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -98,7 +103,8 @@ Cover **all** your constraints — primary keys, foreign keys, NOT NULL, CHECK, 
 Open the **design quality checklist** from Theory Section 5. Go through every item and honestly evaluate your schema. Note any issues you find, then fix what you can. Document what you changed and why.
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -126,7 +132,8 @@ You are designing a complete database for a **music streaming service** called *
 List every entity you need and its attributes. Decide on data types and which columns should be required. Think about what needs to be unique.
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -144,7 +151,8 @@ For every relationship, state:
 You can draw an ER diagram or describe the relationships in text — just be precise about cardinalities.
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -170,7 +178,8 @@ CREATE TABLE users (
 Now write the rest: `artists`, `artist_genres`, `albums`, `songs`, `playlists`, `playlist_songs`, `user_follows_artist`, and `play_history`.
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -188,7 +197,8 @@ For each table, confirm it is in 3NF. Pay special attention to:
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -207,7 +217,8 @@ Make sure every table has appropriate:
 - `DEFAULT` values where sensible
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -235,7 +246,8 @@ There are no universally "correct" answers here — what matters is that you **t
 For each table below, determine:
 1. What normal form is it currently in? (UNF, 1NF, 2NF, or 3NF)
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -244,7 +256,8 @@ For each table below, determine:
 >
 2. What specific violation exists (if any)?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -256,7 +269,8 @@ For each table below, determine:
 
 3. How would you fix it? Show the decomposed tables.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -279,7 +293,8 @@ CREATE TABLE student_courses (
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -305,7 +320,8 @@ CREATE TABLE order_items (
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -329,7 +345,8 @@ CREATE TABLE employees (
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -352,7 +369,8 @@ CREATE TABLE categories (
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -380,7 +398,8 @@ CREATE TABLE project_assignments (
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -457,7 +476,8 @@ Here are some categories to check:
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -472,7 +492,8 @@ For each issue, write your feedback the way you would for a real peer review. Be
 > "The `Books` table is missing a primary key. Without one, PostgreSQL cannot uniquely identify rows and foreign keys cannot reference this table. I would add a `book_id SERIAL PRIMARY KEY` column."
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -493,7 +514,8 @@ Rewrite all four tables (and add any new tables needed) with every issue fixed. 
 ---
 
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here

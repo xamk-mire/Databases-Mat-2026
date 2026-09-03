@@ -1,6 +1,7 @@
 # Week 40 — Exercises: SQL Fundamentals
 
-> [!IMPORTANT] How to Complete These Exercises
+> [!IMPORTANT]
+> ***How to Complete These Exercises***
 > Write your answers directly in the highlighted **Your Answer** / **Your SQL** fields below each task. Replace the placeholder text with your own work before submitting.
 
 ## Exercise 1: TrailShop Project Task
@@ -30,7 +31,8 @@ Write and execute the CREATE TABLE statements for all five TrailShop tables in t
 
 **Verify** by running `\dt` in psql to list all tables.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -72,7 +74,8 @@ Perform the following updates and verify each one:
 4. Set the stock of 'HydroFlask 1L' to 85
 5. Add a description to any product that currently has NULL in description
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -86,7 +89,8 @@ Perform the following updates and verify each one:
 1. Delete the most recently created order (and observe what happens to its order_items if you used CASCADE)
 2. Try to delete a category that has products — what error do you get?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -103,7 +107,8 @@ Perform the following updates and verify each one:
 3. Add a CHECK constraint to ensure `weight_grams > 0` (allow NULL though — not all products have weight recorded yet)
 4. Rename the `stock` column in products to `quantity_in_stock`
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -122,7 +127,8 @@ Answer the following questions in your own words using the answer fields below:
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -131,7 +137,8 @@ Answer the following questions in your own words using the answer fields below:
 >
 2. Explain the difference between DDL and DML. Give two example commands for each.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -142,7 +149,8 @@ Answer the following questions in your own words using the answer fields below:
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -153,7 +161,8 @@ Answer the following questions in your own words using the answer fields below:
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -164,7 +173,8 @@ Answer the following questions in your own words using the answer fields below:
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -175,7 +185,8 @@ Answer the following questions in your own words using the answer fields below:
 
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -184,7 +195,8 @@ Answer the following questions in your own words using the answer fields below:
 >
 7. What does `ON DELETE CASCADE` do on a foreign key? Give a real-world scenario where it's appropriate and one where it would be dangerous.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -193,7 +205,8 @@ Answer the following questions in your own words using the answer fields below:
 >
 8. Why should you store `unit_price` in the `order_items` table instead of just looking it up from the `products` table?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -203,7 +216,8 @@ Answer the following questions in your own words using the answer fields below:
 9. What is the difference between SERIAL and GENERATED ALWAYS AS IDENTITY? Which would you use in a new project and why?
 
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -213,7 +227,8 @@ Answer the following questions in your own words using the answer fields below:
 
 10. Explain why `UPDATE products SET price = 9.99;` is dangerous. What steps should you take before running any UPDATE statement?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -236,7 +251,8 @@ Write a CREATE TABLE statement for a `suppliers` table with the following column
 - phone (max 20 characters)
 - country (max 100 characters, required, default 'Finland')
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -254,7 +270,8 @@ Write a CREATE TABLE statement for a `product_reviews` table:
 - review_text (optional, unlimited length)
 - created_at (required, defaults to current timestamp)
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -266,7 +283,8 @@ Write a CREATE TABLE statement for a `product_reviews` table:
 
 Write an INSERT statement to add a new category called 'Electronics' with description 'GPS devices, solar chargers, and tech gear'.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -281,7 +299,8 @@ Write a single INSERT statement that adds three new customers:
 - Maria Salminen, maria.s@email.com
 - Petri Kallio, petri.k@email.com
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -293,7 +312,8 @@ Write a single INSERT statement that adds three new customers:
 
 Write an INSERT statement that adds a new product called 'NorthStar GPS' priced at €229.99 with stock of 12 in category 'Electronics' (assume category_id = 6). Return the product_id and created_at.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -305,7 +325,8 @@ Write an INSERT statement that adds a new product called 'NorthStar GPS' priced 
 
 Write an UPDATE statement that changes the email of the customer with customer_id = 2 to 'mikko.korhonen@newmail.com'.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -317,7 +338,8 @@ Write an UPDATE statement that changes the email of the customer with customer_i
 
 Write an UPDATE statement that reduces the stock of all products by 1 where the stock is currently greater than 0.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -329,7 +351,8 @@ Write an UPDATE statement that reduces the stock of all products by 1 where the 
 
 Write an UPDATE statement that changes order #3 to status 'cancelled' and sets a (hypothetical) cancelled_at timestamp to the current time. (Assume you've already added a cancelled_at column.)
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -341,7 +364,8 @@ Write an UPDATE statement that changes order #3 to status 'cancelled' and sets a
 
 Write a DELETE statement that removes all orders with status 'cancelled'.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -356,7 +380,8 @@ a) Add a `discount_percent NUMERIC(5,2) DEFAULT 0 CHECK (discount_percent >= 0 A
 b) Drop the `description` column from categories
 c) Add a composite unique constraint on (customer_id, product_id) in the product_reviews table (preventing a customer from reviewing the same product twice)
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -380,14 +405,16 @@ CREATE TABLE warehouses
 );
 ```
 
-> [!NOTE] Error(s) Identified
+> [!NOTE]
+> ***Error(s) Identified***
 >
 > *(Describe what is wrong.)*
 >
 >
 >
 >
-> [!NOTE] Corrected SQL
+> [!NOTE]
+> ***Corrected SQL***
 >
 > ```sql
 > -- Write the corrected statement here
@@ -403,14 +430,16 @@ INSERT INTO products (name, price, stock, category_id)
 VALUES ("Alpine Sleeping Bag", 89.99, 20, 2);
 ```
 
-> [!NOTE] Error(s) Identified
+> [!NOTE]
+> ***Error(s) Identified***
 >
 > *(Describe what is wrong.)*
 >
 >
 >
 >
-> [!NOTE] Corrected SQL
+> [!NOTE]
+> ***Corrected SQL***
 >
 > ```sql
 > -- Write the corrected statement here
@@ -430,14 +459,16 @@ CREATE TABLE shipments (
 );
 ```
 
-> [!NOTE] Error(s) Identified
+> [!NOTE]
+> ***Error(s) Identified***
 >
 > *(Describe what is wrong.)*
 >
 >
 >
 >
-> [!NOTE] Corrected SQL
+> [!NOTE]
+> ***Corrected SQL***
 >
 > ```sql
 > -- Write the corrected statement here
@@ -455,14 +486,16 @@ SET stock = stock + 10
 WHERE category_id = 3;
 ```
 
-> [!NOTE] Error(s) Identified
+> [!NOTE]
+> ***Error(s) Identified***
 >
 > *(Describe what is wrong.)*
 >
 >
 >
 >
-> [!NOTE] Corrected SQL
+> [!NOTE]
+> ***Corrected SQL***
 >
 > ```sql
 > -- Write the corrected statement here
@@ -483,14 +516,16 @@ CREATE TABLE wishlists (
 );
 ```
 
-> [!NOTE] Error(s) Identified
+> [!NOTE]
+> ***Error(s) Identified***
 >
 > *(Describe what is wrong.)*
 >
 >
 >
 >
-> [!NOTE] Corrected SQL
+> [!NOTE]
+> ***Corrected SQL***
 >
 > ```sql
 > -- Write the corrected statement here

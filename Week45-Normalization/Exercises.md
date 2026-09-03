@@ -1,6 +1,7 @@
 # Week 45 — Normalization: Exercises
 
-> [!IMPORTANT] How to Complete These Exercises
+> [!IMPORTANT]
+> ***How to Complete These Exercises***
 > Write your answers directly in the highlighted **Your Answer** / **Your SQL** fields below each task. Replace the placeholder text with your own work before submitting.
 
 ---
@@ -31,7 +32,8 @@ Sample data:
 **Tasks:**
 
 1. Identify the primary key of this table.
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -39,7 +41,8 @@ Sample data:
 >
 > ```
 2. List ALL functional dependencies.
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -47,7 +50,8 @@ Sample data:
 >
 > ```
 3. Identify any insertion, update, and deletion anomalies (give specific examples).
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -55,7 +59,8 @@ Sample data:
 >
 > ```
 4. Normalize this table to 3NF. Show each step (1NF → 2NF → 3NF) with the resulting tables.
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -63,7 +68,8 @@ Sample data:
 >
 > ```
 5. Draw a dependency diagram for the original table showing partial and transitive dependencies.
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -74,7 +80,8 @@ Sample data:
 ### Task 1.2: Review Your Existing TrailShop Schema
 
 1. List all functional dependencies in your current TrailShop schema (all tables).
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -82,7 +89,8 @@ Sample data:
 >
 > ```
 2. For each table, confirm it is in 3NF by verifying:
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -92,7 +100,8 @@ Sample data:
    - No partial dependencies (check tables with composite keys or surrogate keys)
    - No transitive dependencies
 3. Explain why `unit_price` in `order_items` is NOT a normalization violation.
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -109,7 +118,8 @@ If TrailShop wanted to track suppliers:
    - Each supplier offers different prices and lead times
    - Each supplier has contact info (name, email, city)
 2. Write the `CREATE TABLE` statements.
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -118,7 +128,8 @@ If TrailShop wanted to track suppliers:
 > ```
 3. Verify your design is in 3NF.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -134,7 +145,8 @@ Answer in your own words (2–4 sentences each):
 
 1. What is normalization, and what problem does it solve?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -145,7 +157,8 @@ Answer in your own words (2–4 sentences each):
 
 2. Explain the difference between an insertion anomaly and a deletion anomaly, using an example.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -154,7 +167,8 @@ Answer in your own words (2–4 sentences each):
 >
 3. What is a functional dependency? Give an example from a university context (students, courses, professors).
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -163,7 +177,8 @@ Answer in your own words (2–4 sentences each):
 >
 4. What is the difference between a partial dependency and a transitive dependency?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -174,7 +189,8 @@ Answer in your own words (2–4 sentences each):
 
 5. State the "informal rule" for 3NF. Explain what each part means.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -183,7 +199,8 @@ Answer in your own words (2–4 sentences each):
 >
 6. Why can partial dependencies only occur in tables with composite primary keys?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -194,7 +211,8 @@ Answer in your own words (2–4 sentences each):
 
 7. Explain Armstrong's transitivity axiom with a concrete example.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -203,7 +221,8 @@ Answer in your own words (2–4 sentences each):
 >
 8. What is BCNF, and how does it differ from 3NF? In what rare case can a table be in 3NF but not BCNF?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -213,7 +232,8 @@ Answer in your own words (2–4 sentences each):
 9. Give two legitimate reasons to denormalize a database.
 10. What is the closure of an attribute set, and how would you use it to determine if an attribute set is a candidate key?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -222,7 +242,8 @@ Answer in your own words (2–4 sentences each):
 >
 
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -288,7 +309,8 @@ Normalize each table to 3NF. Show your work for each step.
 
 **Steps:**
 1. Identify the PK
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -296,7 +318,8 @@ Normalize each table to 3NF. Show your work for each step.
 >
 > ```
 2. List all FDs
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -306,7 +329,8 @@ Normalize each table to 3NF. Show your work for each step.
 3. Check 1NF, 2NF, 3NF
 4. Decompose as needed
 5. Write final CREATE TABLE statements
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here

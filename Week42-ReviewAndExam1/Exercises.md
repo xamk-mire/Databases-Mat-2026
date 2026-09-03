@@ -1,6 +1,7 @@
 # Week 42 — Exercises: Review and Exam 1 Preparation
 
-> [!IMPORTANT] How to Complete These Exercises
+> [!IMPORTANT]
+> ***How to Complete These Exercises***
 > Write your answers directly in the highlighted **Your Answer** / **Your SQL** fields below each task. Replace the placeholder text with your own work before submitting.
 
 ## Exercise 1: TrailShop Project Task — Review and Verify
@@ -130,7 +131,8 @@ Write SQL for each, then check against the solution.
 
 **Q1: List all products with their category names, sorted by category then price.**
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -155,7 +157,8 @@ ORDER BY pc.name, pp.price;
 
 **Q2: How much has each customer spent in total?**
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -182,7 +185,8 @@ ORDER BY total_spent DESC;
 
 **Q3: Which categories have products that have never been sold?**
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -208,7 +212,8 @@ WHERE s.sale_id IS NULL;
 
 **Q4: What is the total revenue per category?**
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -236,7 +241,8 @@ ORDER BY revenue DESC;
 
 **Q5: Find the most purchased product (by total quantity sold).**
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -270,7 +276,8 @@ These 10 questions cover material from Weeks 36–41. Write your answers without
 ### 3.1 (Week 36 — Theory)
 Name three problems of file-based data management and explain how a database solves each one.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -281,7 +288,8 @@ Name three problems of file-based data management and explain how a database sol
 ### 3.2 (Week 37 — Theory)
 What is the difference between a candidate key and a primary key? Can a table have multiple candidate keys?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -292,7 +300,8 @@ What is the difference between a candidate key and a primary key? Can a table ha
 ### 3.3 (Week 37 — Theory)
 State the referential integrity rule. What happens in PostgreSQL if you try to INSERT a row that violates it?
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -303,7 +312,8 @@ State the referential integrity rule. What happens in PostgreSQL if you try to I
 ### 3.4 (Week 38 — Design)
 A library lends books to members. A member can borrow many books; a book can be borrowed by many members (over time). Draw or describe the ER model, including the junction entity.
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -314,7 +324,8 @@ A library lends books to members. A member can borrow many books; a book can be 
 ### 3.5 (Week 39 — Design)
 For the library scenario above, write the CREATE TABLE statements (at least 3 tables with appropriate keys and constraints).
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -325,7 +336,8 @@ For the library scenario above, write the CREATE TABLE statements (at least 3 ta
 ### 3.6 (Week 40 — DDL)
 Write an ALTER TABLE statement that adds a `discount_percent NUMERIC(4,2) CHECK (discount_percent BETWEEN 0 AND 50)` column to a `products` table.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -336,7 +348,8 @@ Write an ALTER TABLE statement that adds a `discount_percent NUMERIC(4,2) CHECK 
 ### 3.7 (Week 40 — DML)
 Write an INSERT statement that adds 3 rows to a `books` table with columns: title (VARCHAR), author (VARCHAR), isbn (CHAR(13)), price (NUMERIC). Make up realistic data.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -354,7 +367,8 @@ GROUP BY c.name
 HAVING COUNT(p.product_id) = 0;
 ```
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -365,7 +379,8 @@ HAVING COUNT(p.product_id) = 0;
 ### 3.9 (Week 41 — Querying)
 Write a query that finds the top 3 customers by total spending, showing their full name and total amount spent.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your query here
@@ -381,7 +396,8 @@ FROM products
 GROUP BY category_id;
 ```
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Write your answer here.)*
 >
@@ -421,7 +437,8 @@ A book club tracks its members, books, and reading sessions.
 
 **Task F (5 min):** Write a query finding books that NO member has read yet.
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Paste your SQL for Tasks A–F here
@@ -433,7 +450,8 @@ A book club tracks its members, books, and reading sessions.
 1. Add a `pages_read INTEGER DEFAULT 0` column to reading sessions
 2. Add a CHECK constraint ensuring pages_read <= the book's page_count (Hint: this requires a trigger or application logic — explain why a simple CHECK can't do cross-table validation)
 
-> [!NOTE] Your SQL
+> [!NOTE]
+> ***Your SQL***
 >
 > ```sql
 > -- Write your ALTER TABLE statements here
@@ -441,7 +459,8 @@ A book club tracks its members, books, and reading sessions.
 >
 > ```
 
-> [!NOTE] Your Answer
+> [!NOTE]
+> ***Your Answer***
 >
 > *(Explain why a simple CHECK constraint cannot validate pages_read against the book's page_count across tables.)*
 >
