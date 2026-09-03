@@ -48,19 +48,64 @@ Insert the following data:
 **Categories** (at least 5):
 - Footwear, Backpacks, Tents, Clothing, Accessories
 
+> [!NOTE]
+> ***Your SQL***
+>
+> ```sql
+> -- Write your query here
+>
+>
+> ```
+
 **Customers** (at least 5):
-- Use Finnish-sounding names with realistic email addresses
+- Use easy to write names with realistic email addresses
+
+> [!NOTE]
+> ***Your SQL***
+>
+> ```sql
+> -- Write your query here
+>
+>
+> ```
 
 **Products** (at least 10):
 - At least 2 products per category
 - Prices ranging from €20 to €500
 - Various stock levels
 
+> [!NOTE]
+> ***Your SQL***
+>
+> ```sql
+> -- Write your query here
+>
+>
+> ```
+
 **Orders** (at least 5):
 - Different customers, different statuses
 
+> [!NOTE]
+> ***Your SQL***
+>
+> ```sql
+> -- Write your query here
+>
+>
+> ```
+
 **Order Items** (at least 10):
 - Multiple items in some orders, single items in others
+
+> [!NOTE]
+> ***Your SQL***
+>
+> ```sql
+> -- Write your query here
+>
+>
+> ```
 
 **Verify** each insert with `SELECT * FROM table_name;`
 
@@ -78,7 +123,7 @@ Perform the following updates and verify each one:
 > ***Your SQL***
 >
 > ```sql
-> -- Write your query here
+> -- Write your queries here
 >
 >
 > ```
@@ -111,7 +156,7 @@ Perform the following updates and verify each one:
 > ***Your SQL***
 >
 > ```sql
-> -- Write your query here
+> -- Write your queries here
 >
 >
 > ```
@@ -125,8 +170,6 @@ Answer the following questions in your own words using the answer fields below:
 
 1. What does SQL stand for, and why was the language designed to look like English?
 
-
-
 > [!NOTE]
 > ***Your Answer***
 >
@@ -135,6 +178,7 @@ Answer the following questions in your own words using the answer fields below:
 >
 >
 >
+
 2. Explain the difference between DDL and DML. Give two example commands for each.
 
 > [!NOTE]
@@ -145,10 +189,9 @@ Answer the following questions in your own words using the answer fields below:
 >
 >
 >
+
 3. What is the difference between DCL and TCL? When would you use each?
 
-
-
 > [!NOTE]
 > ***Your Answer***
 >
@@ -157,10 +200,9 @@ Answer the following questions in your own words using the answer fields below:
 >
 >
 >
+
 4. Why must you create tables in a specific order? What determines that order?
 
-
-
 > [!NOTE]
 > ***Your Answer***
 >
@@ -169,10 +211,9 @@ Answer the following questions in your own words using the answer fields below:
 >
 >
 >
+
 5. What is the difference between a column-level constraint and a table-level constraint? When *must* you use a table-level constraint?
 
-
-
 > [!NOTE]
 > ***Your Answer***
 >
@@ -181,10 +222,9 @@ Answer the following questions in your own words using the answer fields below:
 >
 >
 >
+
 6. Explain the difference between `DELETE FROM products;` and `TRUNCATE TABLE products;`. When would you prefer each?
 
-
-
 > [!NOTE]
 > ***Your Answer***
 >
@@ -193,6 +233,7 @@ Answer the following questions in your own words using the answer fields below:
 >
 >
 >
+
 7. What does `ON DELETE CASCADE` do on a foreign key? Give a real-world scenario where it's appropriate and one where it would be dangerous.
 
 > [!NOTE]
@@ -203,6 +244,7 @@ Answer the following questions in your own words using the answer fields below:
 >
 >
 >
+
 8. Why should you store `unit_price` in the `order_items` table instead of just looking it up from the `products` table?
 
 > [!NOTE]
@@ -213,17 +255,14 @@ Answer the following questions in your own words using the answer fields below:
 >
 >
 >
-9. What is the difference between SERIAL and GENERATED ALWAYS AS IDENTITY? Which would you use in a new project and why?
 
+9. What is the difference between SERIAL and GENERATED ALWAYS AS IDENTITY? Which would you use in a new project and why?
 
 > [!NOTE]
 > ***Your Answer***
 >
 > *(Write your answer here.)*
 >
-
-
-
 
 10. Explain why `UPDATE products SET price = 9.99;` is dangerous. What steps should you take before running any UPDATE statement?
 
@@ -412,7 +451,8 @@ CREATE TABLE warehouses
 >
 >
 >
->
+
+
 > [!NOTE]
 > ***Corrected SQL***
 >
@@ -437,7 +477,8 @@ VALUES ("Alpine Sleeping Bag", 89.99, 20, 2);
 >
 >
 >
->
+
+
 > [!NOTE]
 > ***Corrected SQL***
 >
@@ -466,7 +507,8 @@ CREATE TABLE shipments (
 >
 >
 >
->
+
+
 > [!NOTE]
 > ***Corrected SQL***
 >
@@ -493,7 +535,8 @@ WHERE category_id = 3;
 >
 >
 >
->
+
+
 > [!NOTE]
 > ***Corrected SQL***
 >
@@ -523,7 +566,8 @@ CREATE TABLE wishlists (
 >
 >
 >
->
+
+
 > [!NOTE]
 > ***Corrected SQL***
 >
