@@ -202,17 +202,17 @@ Answer the following in your own words (write 2–3 sentences per point):
 
 1. List **3 specific problems** TrailShop would face if they kept using spreadsheets as their product catalog grows to 5,000+ items with 10 staff members.
 
-   > [!NOTE]
-   > ***Your Answer***
-   >
-   > _(Write your answer here.)_
+> [!NOTE]
+> ***Your Answer***
+>
+> _(Write your answer here.)_
 
 2. List **3 benefits** of switching to a database system, explaining how each one solves a problem from your list above.
 
-   > [!NOTE]
-   > ***Your Answer***
-   >
-   > _(Write your answer here.)_
+> [!NOTE]
+> ***Your Answer***
+>
+> _(Write your answer here.)_
 
 3. Explain the three-schema architecture in your own words. Why is the separation into three levels useful?
 
