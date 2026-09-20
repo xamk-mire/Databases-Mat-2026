@@ -19,7 +19,7 @@ Using the `products`, `categories`, and `customers` tables shown in Section 2 of
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(product_id is the primary key. It is a good choice because it is unique for every product, never changes, and clearly identifies each row without relying on data that could change (like name or price))*
 >
 >
 >
@@ -31,7 +31,7 @@ Using the `products`, `categories`, and `customers` tables shown in Section 2 of
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(category_id)*
 >
 >
 >
@@ -43,7 +43,7 @@ Using the `products`, `categories`, and `customers` tables shown in Section 2 of
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(category_id is the foreign key. It references categories.category_id)*
 >
 >
 >
@@ -56,7 +56,7 @@ Using the `products`, `categories`, and `customers` tables shown in Section 2 of
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(It could be a candidate key only if all product names are guaranteed unique. It is unsuitable as a PK because names can change, duplicate names can happen, and searching/joining with text is slower than using a numeric ID. )*
 >
 >
 >
@@ -66,7 +66,7 @@ Using the `products`, `categories`, and `customers` tables shown in Section 2 of
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *([product_id name] is a superkey but not a candidate key.It uniquely identifies rows,but it is not minimal product _id alone is enought removing name still keeps uniqueness.)*
 >
 >
 >
@@ -77,7 +77,7 @@ Using the `products`, `categories`, and `customers` tables shown in Section 2 of
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Composite key: {order_id, product_id}. Neither column alone works — one order has many products, and one product appears in many orders. Only together do they uniquely identify one line item.)*
 >
 >
 >
@@ -88,7 +88,7 @@ Using the `products`, `categories`, and `customers` tables shown in Section 2 of
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Yes, email is a candidate key (unique per customer). However, it is a natural key — it has business meaning and can change (people change emails). customer_id is a surrogate key — it has no business meaning, never changes, and is stable.)*
 >
 >
 >
@@ -115,9 +115,13 @@ Think about rules for customers, orders, and categories — not just products.
 > ***Your Answer***
 >
 > *(List your 5 business rules with constraint types, table/column, and SQL syntax.)*
->
->
->
+>  | Business Rule | Constraint Type | Table.Column | SQL |
+> |---|---|---|---|
+> | Every product must have a price greater than zero | CHECK | products.price | `CHECK (price > 0)` |
+> | Product stock quantity cannot be negative | CHECK | products.stock_quantity | `CHECK (stock_quantity >= 0)` |
+> | Every customer email address must be unique | UNIQUE | customers.email | `UNIQUE (email)` |
+> | Category names cannot be empty (NULL) | NOT NULL | categories.category_name | `NOT NULL` |
+> | Order total amount must be non-negative | CHECK | orders.total_amount | `CHECK (total_amount >= 0)` |
 >
 
 ### Task 3: Integrity Violations
@@ -162,28 +166,33 @@ VALUES (1001, 101, 0, 189.50);
 > ***Your Answer***
 >
 > *(For each statement A–H, write SUCCESS or FAIL and explain any violation.)*
->
->
->
->
-
+> | Statement | Result | Explanation & Integrity Rule |
+> |---|---|---|
+> | **Statement A** | **FAIL** | Violates Entity Integrity / `NOT NULL` constraint: Primary key `category_id` cannot be NULL. |
+> | **Statement B** | **SUCCESS** | Valid insert; all attributes adhere to constraints and category 2 exists in the categories table. |
+> | **Statement C** | **FAIL** | Violates Domain Integrity / `CHECK` constraint: `price = -5.00` violates `CHECK (price > 0)`. |
+> | **Statement D** | **FAIL** | Violates Entity Integrity / `PRIMARY KEY` constraint: `product_id = 103` already exists (duplicate key). |
+> | **Statement E** | **FAIL** | Violates Referential Integrity / `FOREIGN KEY` constraint: `category_id = 10` does not exist in `categories`. |
+> | **Statement F** | **FAIL** | Violates Domain Integrity / `NOT NULL` constraint: Product `name` cannot be NULL. |
+> | **Statement G** | **FAIL** | Violates Domain Integrity / `CHECK` constraint: `stock_quantity = -3` violates `CHECK (stock_quantity >= 0)`. |
+> | **Statement H** | **FAIL** | Violates Domain Integrity / `CHECK` constraint: `quantity = 0` violates `CHECK (quantity > 0)`. |
 ### Task 4: Foreign Key Actions
 
 Consider the following scenario using the schema from Theory Section 9.8:
 
 1. You want to delete category 2 ("Camping") from the `categories` table. Products 102 and 106 reference this category. What happens with:
-   - `ON DELETE RESTRICT`?
-   - `ON DELETE CASCADE`?
-   - `ON DELETE SET NULL`? (Assume `category_id` in `products` allows NULL for this question)
+   - `ON DELETE RESTRICT`? Delete blocked.Products still reference this category ,deletion is rejected.
+   - `ON DELETE CASCADE`? Category and all its products are deleted.
+   - `ON DELETE SET NULL`? (Assume `category_id` in `products` allows NULL for this question) Category deleted;products.category_id set to Null
 
 2. Which foreign key action would you recommend for the TrailShop `products.category_id` → `categories.category_id` relationship? Justify your choice in 2–3 sentences.
 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
->
->
+> *(Delete blocked. Products still reference this category; deletion is rejected.
+> Catedory and all its products are deleted
+> Category deleted; products.category_id set to NULL.)*
 >
 >
 
@@ -203,7 +212,10 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Relation = table with rows & columns 
+> Tuple = one row/record
+> Attribute =  one column/field 
+> Domain = allowed values for an attribute.)*
 >
 >
 >
@@ -217,7 +229,7 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(A candidate key can uniquely identify rows — there can be multiple. A primary key is the one chosen from candidates as the main identifier. Yes, a table can have multiple candidate key.)*
 >
 >
 >
@@ -231,7 +243,7 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Every primary key value must be unique and not NULL. If PK were NULL, the row could not be uniquely identified — it would break the foundation of the relational model.)*
 >
 >
 >
@@ -243,8 +255,10 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 
 > [!NOTE]
 > ***Your Answer***
->
-> *(Write your answer here.)*
+> INSERT INTO products (product_id, name, price, stock_quantity, category_id)
+VALUES (999, 'Trek Pole', 29.99, 10, 9999);
+-- ERROR: insert or update on table "products" violates foreign key constraint "products_category_id_fkey"
+-- DETAIL: Key (category_id)=(9999) is not present in table "categories".)*
 >
 >
 >
@@ -257,7 +271,8 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Surrogate = artificial ID with no business meaning (e.g., book_id)
+> Natural = from real-world data with meaning (e.g., ISBN)*
 >
 >
 >
@@ -271,7 +286,7 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(NULL means "unknown or missing value". WHERE price = NULL is always unknown — use WHERE price IS NULL instead. NULL is not equal to anything, including itself.)*
 >
 >
 >
@@ -284,7 +299,7 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *( table connecting two others for a many-to-many relationship. Example: book_authors(book_id, author_id) links books and authors _one book has many authors,one author many books.)*
 >
 >
 >
@@ -297,7 +312,9 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(1:1 - one customer = one loyalty account
+> 1:N -  one category = many products
+> M:N -one product = many orders; one order = many products)*
 >
 >
 >
@@ -311,7 +328,9 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(RESTRICT —  block deletion if referenced
+> CASCADE — delete referencing rows too
+> Use RESTRICT  when data should be preserved; use CASCADE when dependent data should be removed together.)*
 >
 >
 >
@@ -324,7 +343,7 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *Each cell holds one single value, not a list or combination. Violation: storing 'Red, Blue, Green' in one color column — should be separate rows or a separate table.)*
 >
 >
 >
@@ -336,12 +355,12 @@ Answer each question in 2–4 sentences unless otherwise specified. Reference th
 
 For each statement, write **True** or **False** and correct any false statements.
 
-1. A superkey is always a candidate key.
-2. A primary key can consist of more than one column.
-3. NULL = NULL evaluates to TRUE in SQL.
-4. A foreign key must always be NOT NULL.
-5. Referential integrity ensures that every FK value matches an existing PK value (or is NULL).
-6. The degree of a relation is the number of rows.
+1. False _ A superkey is always a candidate key.
+2. True_A primary key can consist of more than one column.
+3. False_NULL = NULL evaluates to TRUE in SQL.
+4. False_ A foreign key must always be NOT NULL.
+5. True_Referential integrity ensures that every FK value matches an existing PK value (or is NULL).
+6. False_ The degree of a relation is the number of rows.
 
 ### Matching Exercise
 
@@ -383,18 +402,18 @@ Match each term (1–12) with its definition (A–L).
 >
 > | # | Your Match |
 > |---|---|
-> | 1 | |
-> | 2 | |
-> | 3 | |
-> | 4 | |
-> | 5 | |
-> | 6 | |
-> | 7 | |
-> | 8 | |
-> | 9 | |
-> | 10 | |
-> | 11 | |
-> | 12 | |
+> | 1 | F |
+> | 2 | G |
+> | 3 | B |
+> | 4 | H |
+> | 5 | E | 
+> | 6 | D |
+> | 7 | J |
+> | 8 | C |
+> | 9 | A |
+> | 10 |K | 
+> | 11 |I |
+> | 12 |L |
 >
 
 ---
@@ -459,6 +478,30 @@ INSERT INTO employees VALUES (106, 'Grace', 0, 2);
 ```
 
 ### Exercise 3.2: Write the Constraints
+CREATE TABLE genres (
+    genre_id INT PRIMARY KEY,
+    genre_name VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE books (
+    isbn CHAR(13) PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    price NUMERIC(10,2) NOT NULL CHECK (price > 0),
+    publication_year INT CHECK (publication_year BETWEEN 1450 AND EXTRACT(YEAR FROM CURRENT_DATE)),
+    genre_id INT NOT NULL REFERENCES genres(genre_id)
+);
+
+CREATE TABLE authors (
+    author_id INT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE book_authors (
+    isbn CHAR(13) REFERENCES books(isbn) ON DELETE CASCADE,
+    author_id INT REFERENCES authors(author_id) ON DELETE CASCADE,
+    PRIMARY KEY (isbn, author_id)
+);
 
 Given these business rules for a **bookstore database**, write the `CREATE TABLE` statements with appropriate constraints:
 
@@ -497,13 +540,58 @@ A small public library needs a database. Here is a description of their requirem
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
->
->
->
->
-6. **Write the CREATE TABLE statements** for at least the `books`, `copies`, and `borrowings` tables with full constraints.
+> *(1. Tables & Columns:
+> books — isbn, title, pub_year, genre_id
+> genres — genre_id, genre_name .)*
+> copies — barcode, isbn, condition
+> members — member_no, name, email, phone
+> borrowings —borrowing_id, barcode, member_no, borrow_date, due_date, return_date
+> 2. Primary Keys:
+> books.isbn — natural key (real-world meaning)
+> genres.genre_id — surrogate key (simple numeric ID)
+> copies.barcode — natural key (unique sticker)
+> members.member_no —natural/surrogate (assigned ID)
+> borrowings.borrowing_id — surrogate key (auto-generated, never changes)
+> 3. Foreign Keys:
+> copies.isbn →books.isbn
+> books.genre_id → genres.genre_id
+> borrowings.barcode →copies.barcode
+> borrowings.member_no → members.member_no
+> 4. Candidate Keys:
+> members.email is unique → alternate key
+> books.isbn is PK, no others needed
+> 5. Business Rules & Constraints:
+> Email unique → UNIQUE
+> Due date = borrow_date + 14 → CHECK or trigger
+> Max 5 borrows per member → Cannot be done with simple constraints — needs trigger or application logic
+> Cannot borrow if already out → Cannot be done with simple constraints — needs trigger or check
 
+6. **Write the CREATE TABLE statements** for at least the `books`, `copies`, and `borrowings` tables with full constraints.
+CREATE TABLE books (
+    isbn CHAR(13) PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    publication_year INT CHECK (publication_year BETWEEN 1450 AND EXTRACT(YEAR FROM CURRENT_DATE)),
+    genre_id INT NOT NULL REFERENCES genres(genre_id)
+);
+
+CREATE TABLE copies (
+    barcode VARCHAR(50) PRIMARY KEY,
+    isbn CHAR(13) NOT NULL REFERENCES books(isbn) ON DELETE CASCADE
+);
+
+CREATE TABLE borrowings (
+    borrowing_id SERIAL PRIMARY KEY,
+    member_id INT NOT NULL REFERENCES members(member_id),
+    barcode VARCHAR(50) NOT NULL REFERENCES copies(barcode),
+    borrow_date DATE NOT NULL DEFAULT CURRENT_DATE,
+    due_date DATE NOT NULL CHECK (due_date >= borrow_date),
+    return_date DATE CHECK (return_date >= borrow_date)
+);
+
+-- Partial unique index to enforce that an unreturned copy cannot be borrowed again
+CREATE UNIQUE INDEX idx_active_borrowing_per_copy 
+ON borrowings(barcode) 
+WHERE return_date IS NULL;
 ---
 
 ## Submission Checklist
