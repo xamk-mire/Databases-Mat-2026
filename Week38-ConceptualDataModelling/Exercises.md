@@ -42,7 +42,11 @@ Using the entity descriptions from Theory Section 12, create an ER diagram that 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> **Diagram Representation:**
+`[Customer] 1 ──< Places >── O< [Order] 1 ──< Contains >── O< [OrderItem] >O ──< Belongs To >── 1 [Product] >O ──< Classified By >── O< [ProductCategory] >O ──< Belongs To >── 1 [Category]`
+
+**Design Decision Explanation:**
+In Week 37, storing `category_id` directly in the `Product` table limited each product to belonging to exactly one category. Replacing this with the `ProductCategory` junction entity resolves the Many-to-Many (M:N) relationship between `Product` and `Category`, allowing a product to belong to multiple categories and a category to contain multiple products. Furthermore, `OrderItem` is a weak entity because it relies on `Order` for its primary key identification, and storing `unit_price` in `OrderItem` is critical to preserve historical pricing at the time of purchase.
 >
 >
 >
@@ -59,7 +63,9 @@ Answer each question in 2–4 sentences. Reference the relevant theory section. 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(First, it helps you understand the business requirements clearly without worrying about database-specific syntax. Second, it lets you spot
+> design problems — such as missing entities or incorrect relationships — early, before you spend time building tables that would need to be
+> rewritten later.)*
 >
 >
 >
@@ -70,7 +76,9 @@ Answer each question in 2–4 sentences. Reference the relevant theory section. 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *The conceptual level describes what data exists and how it relates to business rules — independent of any database system. The logical level
+> translates those ideas into database structures — such as tables, columns, and keys — but still without specifying exactly which software or
+> file formats will be used.)*
 >
 >
 >
@@ -81,7 +89,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section. 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Logical data independence means you can change the database structure — such as adding a new column or splitting a table — without breaking
+> existing application programs. )*
 >
 >
 >
@@ -92,7 +101,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section. 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(WPhysical data independence means you can change how data is stored on disk — such as indexing, file compression, or storage location —
+> without changing the SQL or table definitions.)*
 >
 >
 >
@@ -103,7 +113,9 @@ Answer each question in 2–4 sentences. Reference the relevant theory section. 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(A strong entity has its own primary key and can exist independently — e.g., Student(student_id, name). A weak entity does not have a full
+> primary key of its own and depends on another entity — e.g., OrderLine cannot exist without an Order; it uses the parent's key as part of its
+> own.)*
 >
 >
 >
@@ -114,7 +126,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section. 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(A composite attribute can be broken into smaller meaningful parts but is stored as one value — e.g., full_address .
+> A multivalued attribute holds multiple separate values for one record — e.g., a person's multiple phone numbers.)*
 >
 >
 >
@@ -125,7 +138,7 @@ Answer each question in 2–4 sentences. Reference the relevant theory section. 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(A derived attribute's value is calculated from other data instead of being stored.It is usually not stored because the value changes over time and storing it would create redundant, easily outdated data. You recalculate it when needed)*
 >
 >
 >
@@ -135,7 +148,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section. 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(A binary relationship connects two different entity types — e.g., Customer places Order. A unary (recursive) relationship connects an entity
+>  to itself — e.g., an Employee manages another Employee.)*
 >
 
 
@@ -145,20 +159,23 @@ Answer each question in 2–4 sentences. Reference the relevant theory section. 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(In an identifying relationship, the parent's primary key becomes part of the child's primary key — the child cannot exist without the parent.
+> In a non-identifying relationship, the parent's key is just a regular foreign key in the child — the child can exist independently.)*
 >
 
 
 
 
 10. In crow's foot notation, what does the following endpoint mean: a circle followed by a crow's foot (fork)? *(Section 9)*
-
+Answer (A circle means zero participation , and a crow's foot means many. Together they mean zero or more — the entity on that side can be related to zero, one, or many instances of the other entity.)
 11. Why can't a many-to-many (M:N) relationship be directly implemented in a relational database? What is the solution? *(Section 10)*
 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(A many-to-many relationship cannot be stored directly in tables because there is no single place to put the foreign key without creating
+> duplicate or ambiguous references. The solution is to create a junction/associative table in between — with foreign keys to both sides — which
+>  turns one M:N into two 1:N relationships.)*
 >
 >
 >
@@ -169,7 +186,9 @@ Answer each question in 2–4 sentences. Reference the relevant theory section. 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(A single category_id allows only one category per product, but in reality a product can belong to multiple categories — for example, a tent
+> could be listed under "Camping", "Shelter", and "New Arrivals". This limitation is replaced by a junction entity ProductCategory that connects
+>  Product and Category, enabling any number of categories per product.)*
 >
 >
 >
@@ -180,7 +199,8 @@ Answer each question in 2–4 sentences. Reference the relevant theory section. 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Employee → Department: (1, 1) — exactly one department
+> Department → Employee: (1, N) — at least one employee, many allowed)*
 >
 >
 >
@@ -227,7 +247,8 @@ a) Can an author exist without having written any books? Explain using the notat
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Yes. The symbol O< near Book means zero or more — an author can have zero books. The || near Author means a book must have exactly one
+> author)*
 >
 >
 >
@@ -237,7 +258,7 @@ b) Can a book exist without being loaned? Explain using the notation.
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Yes. O< near Loan means zero or more — a book may never be loaned. Loans always relate to exactly one book.)*
 >
 >
 >
@@ -249,7 +270,8 @@ c) What type of entity is Loan in this diagram? Is it a junction/associative ent
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Loan is an associative/junction entity — it connects Book and Member and may carry its own attributes (loan date, due date). It resolves the
+>  many-to-many relationship between Member and Book.)*
 >
 >
 >
@@ -261,7 +283,8 @@ d) What is the cardinality of the Author-Book relationship? Is this realistic? W
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(The diagram shows one author writes many books, but a book has exactly one author. This is not realistic — books often have multiple authors.
+> A more accurate model would use a junction table BookAuthor to allow many authors per book..)*
 >
 >
 >
@@ -273,7 +296,7 @@ e) What attributes would you add to the Loan entity?
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Loan ID, borrow date, due date, return date, loan status.)*
 >
 >
 >
@@ -304,7 +327,7 @@ a) Can a student exist without being enrolled in any course?
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Yes. O| means zero or one — a student may have zero enrollments.)*
 >
 >
 >
@@ -316,7 +339,7 @@ b) Can a course exist without having any enrolled students?
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Yes. The crow's foot near Enrollment means zero or more — a course can be created before anyone signs up.)*
 >
 >
 >
@@ -328,7 +351,7 @@ c) What is the cardinality between Student and Course (through Enrollment)?
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Many-to-many (M:N) — one student takes many courses; one course has many students. The Enrollment junction resolves this.)*
 >
 >
 >
@@ -340,7 +363,7 @@ d) Can a teacher exist without teaching any courses?
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Yes. O< means zero or more — a teacher may be hired but not yet assigned to any class.)*
 >
 >
 >
@@ -352,7 +375,8 @@ e) Is the Teacher-Course relationship 1:1 or 1:N? What does this imply about tea
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(One-to-many (1:N) — one teacher teaches many courses, but each course has exactly one teacher. This means team teaching is not supported in
+>  this model; a course cannot have multiple instructors.)*
 >
 >
 >
@@ -387,7 +411,13 @@ FitZone is a local gym and fitness center. They need a database to manage their 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Member — member_id (PK), first_name, last_name, email, phone, dob, start_date
+> MembershipPlan — plan_id (PK), plan_name, monthly_price, description
+> Trainer — trainer_id (PK), first_name, last_name, specialization, hire_date
+> Class — class_id (PK), class_name, day_of_week, start_time, end_time, max_capacity
+> Registration — member_id (FK), class_id (FK), registration_date
+> Equipment — equip_id (PK), equip_name, equip_type, purchase_date, status
+> MaintenanceRequest — request_id (PK), request_date, problem_desc, status, resolution_date.)*
 >
 >
 >
@@ -398,7 +428,10 @@ FitZone is a local gym and fitness center. They need a database to manage their 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> 1. **MembershipPlan to Member:** 1:N (One plan can have many members; each member subscribes to exactly one plan.)
+> 2. **Trainer to Class:** 1:N (One trainer can lead many classes; each class is led by exactly one trainer.)
+> 3. **Member to Class:** M:N (Resolved via Registration junction table — a member can register for many classes, and a class can have many registered members.)
+> 4. **Equipment to MaintenanceRequest:** 1:N (One piece of equipment can have many maintenance requests; each request is for exactly one piece of equipment.)
 >
 >
 >
@@ -409,7 +442,10 @@ FitZone is a local gym and fitness center. They need a database to manage their 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Add a link to your image here)*
+> **Diagram Representation:**
+`[MembershipPlan] 1 ──< Has >── O< [Member] 1 ──< Makes >── O< [Registration] >O ──< Belongs To >── 1 [Class] >O ──< Led By >── 1 [Trainer]`
+
+`[Equipment] 1 ──< Has >── O< [MaintenanceRequest]`
 >
 >
 >
@@ -420,7 +456,9 @@ FitZone is a local gym and fitness center. They need a database to manage their 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Registration is a junction/associative entity — it connects Member and Class and carries the registration date.
+> MaintenanceRequest could be considered a dependent entity — it cannot exist without Equipment, but it has its own independent key so it is not
+>  strictly weak.)*
 >
 >
 >
@@ -431,7 +469,7 @@ FitZone is a local gym and fitness center. They need a database to manage their 
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Member ↔ Class is M:N — resolved by Registration junction table.*
 >
 >
 >
@@ -471,12 +509,12 @@ The following ER diagram description contains **four errors**. Find each error, 
 ### Your Task
 
 Find the four errors in this design and for each one:
-
+## Error 1
 a) State what the error is
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(genres stores multiple values in one field as "Fiction, Mystery, Thriller".)*
 >
 >
 >
@@ -487,7 +525,7 @@ b) Explain why it's a problem (reference the relevant theory section)
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(This violates atomicity — each field should contain only one value. Searching by genre becomes difficult and unreliable..)*
 >
 >
 >
@@ -498,8 +536,89 @@ c) Describe how to fix it
 > [!NOTE]
 > ***Your Answer***
 >
-> *(Write your answer here.)*
+> *(Create a separate 'Genre' table and a junction table 'BlookGenre'.)*
 >
+>
+>## Error 2
+a) State what the error is
+> [!NOTE]
+> ***Your Answer***
+>
+> *(Books ↔ Customer is defined as a direct M:N relationship with no junction table.)*
+>
+>
+>
+>
+
+b) Explain why it's a problem (reference the relevant theory section)
+
+> [!NOTE]
+> ***Your Answer***
+>
+> *(M:N relationships cannot be implemented directly in a relational database — there is no place to store foreign keys..)*
+>
+>
+>
+>
+
+c) Describe how to fix it
+
+> [!NOTE]
+> ***Your Answer***
+>
+> *(Add a junction table between them, such as `PurchaseItem '.)*
+>
+>
+>## Error 3
+a) State what the error is
+> [!NOTE]
+> ***Your Answer***
+>
+> *(No relationship exists between Books and Purchase.)*
+>
+>
+>
+>
+
+b) Explain why it's a problem (reference the relevant theory section)
+
+> [!NOTE]
+> ***Your Answer***
+>
+> *(You cannot track which books are in which orders — essential data is missing.)*
+>
+>
+>
+>## Error 4
+a) State what the error is
+> [!NOTE]
+> ***Your Answer***
+>
+> *(Author information is stored as a plain text string (author_name) directly inside the Books table.)*
+>
+>
+>
+>
+
+b) Explain why it's a problem (reference the relevant theory section)
+
+> [!NOTE]
+> ***Your Answer***
+>
+> *(Storing author details directly in the Books table creates data redundancy and anomaly risks (Section 6 & Section 10). If an author writes
+> multiple books, their name is repeated, making updates error-prone and preventing authors without books from existing in the system.)*
+>
+>
+>
+>
+
+c) Describe how to fix it
+
+> [!NOTE]
+> ***Your Answer***
+>
+> *(Create a separate Author table (with author_id as PK) and link it to Books via a junction table BookAuthor to handle a Many-to-Many
+> relationship, allowing books to have multiple authors and authors to write multiple books.)*
 >
 >
 >
