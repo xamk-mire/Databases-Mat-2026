@@ -37,7 +37,7 @@ For each table, you must:
 ### Deliverables
 
 1. A single `.sql` file with all six `CREATE TABLE` statements (executable in PostgreSQL)
-2. A short written document (1–2 pages) containing:
+2. A short justification for data types, FK actions and design decisions:
    - Justification for 3 data type choices (e.g., why `NUMERIC(10,2)` for price instead of `REAL`)
    - Justification for each FK action choice (e.g., why CASCADE on `order_items.order_id`)
    - One design decision you made that wasn't specified in the requirements (e.g., whether shipping address is optional)
