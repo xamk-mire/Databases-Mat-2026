@@ -132,6 +132,9 @@ Insert the following data:
 
 ### Task 1.4: Practice UPDATE
 
+> [!TIP]
+> **Recommended practice.** Do Tasks 1.4–1.6. They are not required to finish the TrailShop project. They prepare you for the exams. Task 1.6 renames `stock` to `quantity_in_stock`. Later weeks still use `stock`, so after you practice the rename, change the column name back.
+
 Perform the following updates and verify each one:
 
 1. Increase the price of all products in the Footwear category by 10% (join through `product_categories`)
@@ -250,7 +253,10 @@ Answer the following questions in your own words using the answer fields below:
 
 ---
 
-## Exercise 3: SQL Writing Exercises
+## Exercise 3: SQL Writing Exercises (Optional)
+
+> [!TIP]
+> **Recommended practice.** Do this section. It is not required to finish the TrailShop project. It prepares you for the exams.
 
 Write the SQL statements for each task in the **Your SQL** fields below. Verify by running them when ready.
 
@@ -407,7 +413,10 @@ c) Add a composite unique constraint on (customer_id, product_id) in the product
 
 ---
 
-## Exercise 4: Error Diagnosis
+## Exercise 4: Error Diagnosis (Optional)
+
+> [!TIP]
+> **Recommended practice.** Do this section. It is not required to finish the TrailShop project. It prepares you for the exams.
 
 Each of the following SQL statements contains one or more errors. Identify the error(s) and write the corrected version.
 
@@ -534,12 +543,16 @@ CREATE TABLE wishlists (
 
 ## Submission Checklist
 
+**Required**
+
 - [ ] All 6 TrailShop tables created successfully
 - [ ] Sample data inserted (at least 5 categories, 5 customers, 10 products, product_categories links, 5 orders, 10 order items)
+- [ ] Theory review questions answered
+
+**Recommended practice**
+
 - [ ] UPDATE exercises completed and verified
 - [ ] DELETE exercises completed and verified
-- [ ] ALTER TABLE exercises completed and verified
-- [ ] Theory review questions answered
+- [ ] ALTER TABLE exercises completed, then `quantity_in_stock` renamed back to `stock`
 - [ ] SQL writing exercises completed
 - [ ] Error diagnosis completed with corrections
-- [ ] All inline answer fields completed
