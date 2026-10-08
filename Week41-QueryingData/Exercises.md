@@ -8,6 +8,10 @@
 
 Use the TrailShop database you created in Week 40. Write SQL queries to answer each business question below. Run each query and verify the results make sense.
 
+> [!IMPORTANT]
+> **_Tools to use_**
+> You can use both the pgAdmin or psql (terminal) to test the queries
+
 ### Basic Queries (SELECT + WHERE)
 
 1. List all products in the 'Footwear' category (show name, price, stock).
