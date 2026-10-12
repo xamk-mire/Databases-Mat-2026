@@ -12,174 +12,216 @@ Use the TrailShop database you created in Week 40. Write SQL queries to answer e
 > **_Tools to use_**
 > You can use both the pgAdmin or psql (terminal) to test the queries
 
-### Basic Queries (SELECT + WHERE)
+## Basic Queries (SELECT + WHERE)
 
-1. List all products in the 'Footwear' category (show name, price, stock).
-
-   > [!NOTE]
-   > **_Your SQL_**
-   >
-   > ```sql
-   > -- Write your query here
-   >
-   >
-   > ```
-
-2. Find all products priced between €50 and €150, sorted by price ascending.
-
-   > [!NOTE]
-   > **_Your SQL_**
-   >
-   > ```sql
-   > -- Write your query here
-   >
-   >
-   > ```
-
-3. Show all customers whose last name starts with the letter 'M' or 'K'.
-
-   > [!NOTE]
-   > **_Your SQL_**
-   >
-   > ```sql
-   > -- Write your query here
-   >
-   >
-   > ```
-
-4. List all orders with status 'pending' or 'shipped', sorted by order date (most recent first).
-
-   > [!NOTE]
-   > **_Your SQL_**
-   >
-   > ```sql
-   > -- Write your query here
-   >
-   >
-   > ```
-
-5. Find all products that have the word 'Pro' or 'pro' somewhere in their name.
-   > [!NOTE]
-   > **_Your SQL_**
-   >
-   > ```sql
-   > -- Write your query here
-   >
-   >
-   > ```
-
-### Aggregate Queries
-
-6. What is the total number of products in the database?
+### 1. List all products in the 'Footwear' category (show name, price, stock).
 
 > [!NOTE]
 > **_Your SQL_**
 >
 > ```sql
-> -- Write your query here
->
->
+> SELECT p.name, p.price, p.stock
+> FROM products p
+> JOIN product_categories pc ON p.product_id = pc.product_id
+> JOIN categories c ON pc.category_id = c.category_id
+> WHERE c.name = 'Footwear';
 > ```
 
-7. What is the average price of all products? Round to 2 decimal places.
-
-   > [!NOTE]
-   > **_Your SQL_**
-   >
-   > ```sql
-   > -- Write your query here
-   >
-   >
-   > ```
-
-8. Which is the most expensive product and which is the cheapest? Show both in one query.
-
-   > [!NOTE]
-   > **_Your SQL_**
-   >
-   > ```sql
-   > -- Write your query here
-   >
-   >
-   > ```
-
-9. How many orders does each customer have? Show customer name and order count, sorted by count descending.
-
-   > [!NOTE]
-   > **_Your SQL_**
-   >
-   > ```sql
-   > -- Write your query here
-   >
-   >
-   > ```
-
-10. What is the total revenue (sum of quantity × unit_price from order_items) for each order status?
+### 2. Find all products priced between €50 and €150, sorted by price ascending.
 
 > [!NOTE]
 > **_Your SQL_**
 >
 > ```sql
-> -- Write your query here
->
->
+> SELECT name, price
+> FROM products
+> WHERE price BETWEEN 50 AND 150
+> ORDER BY price ASC;
 > ```
 
-### JOIN Queries
+### 3. Find all customers whose last name starts with 'M' or 'K'.
 
-11. List all products with their category names (join through `product_categories`). A product in two categories should appear twice. Sort by category name, then product name.
+> [!NOTE]
+> **_Your SQL_**
+>
+> ```sql
+> SELECT first_name, last_name
+> FROM customers
+> WHERE last_name LIKE 'M%'
+>    OR last_name LIKE 'K%';
+> ```
 
-    > [!NOTE]
-    > **_Your SQL_**
-    >
-    > ```sql
-    > -- Write your query here
-    >
-    >
-    > ```
+### 4. Find all orders with status 'pending' or 'shipped', sorted by most recent first.
 
-12. Show each order with the customer's full name, order date, and status.
+> [!NOTE]
+> **_Your SQL_**
+>
+> ```sql
+> SELECT order_id, order_date, status
+> FROM orders
+> WHERE status IN ('pending', 'shipped')
+> ORDER BY order_date DESC;
+> ```
 
-    > [!NOTE]
-    > **_Your SQL_**
-    >
-    > ```sql
-    > -- Write your query here
-    >
-    >
-    > ```
+### 5. Find all products with 'Pro' or 'pro' in their name.
 
-13. Show a detailed breakdown of order #1: product name, quantity, unit price, and line total.
+> [!NOTE]
+> **_Your SQL_**
+>
+> ```sql
+> SELECT name, price, stock
+> FROM products
+> WHERE name ILIKE '%pro%';
+> ```
 
-    > [!NOTE]
-    > **_Your SQL_**
-    >
-    > ```sql
-    > -- Write your query here
-    >
-    >
-    > ```
+### 6. Count the total number of products.
 
-14. Find all customers who have NOT placed any orders. (Hint: use LEFT JOIN + IS NULL pattern.)
+> [!NOTE]
+> **_Your SQL_**
+>
+> ```sql
+> SELECT COUNT(*) AS total_products
+> FROM products;
+> ```
 
-    > [!NOTE]
-    > **_Your SQL_**
-    >
-    > ```sql
-    > -- Write your query here
-    >
-    >
-    > ```
+### 7. Calculate the average product price, rounded to two decimal places.
 
-15. For each category, show the category name, number of products, average price, and total inventory value (price × stock summed). Only include categories with total inventory value greater than €500.
-    > [!NOTE]
-    > **_Your SQL_**
-    >
-    > ```sql
-    > -- Write your query here
-    >
-    >
-    > ```
+> [!NOTE]
+> **_Your SQL_**
+>
+> ```sql
+> SELECT ROUND(AVG(price), 2) AS average_price
+> FROM products;
+> ```
+
+### 8. Find the most expensive and cheapest products using one query.
+
+> [!NOTE]
+> **_Your SQL_**
+>
+> ```sql
+> SELECT name, price
+> FROM products
+> WHERE price = (SELECT MAX(price) FROM products)
+>    OR price = (SELECT MIN(price) FROM products);
+> ```
+
+## Aggregate Queries (GROUP BY + HAVING)
+
+### 9. Count the number of orders placed by each customer, sorted by order count descending.
+
+> [!NOTE]
+> **_Your SQL_**
+>
+> ```sql
+> SELECT
+>     c.first_name || ' ' || c.last_name AS customer_name,
+>     COUNT(o.order_id) AS order_count
+> FROM customers c
+> LEFT JOIN orders o ON c.customer_id = o.customer_id
+> GROUP BY c.customer_id, c.first_name, c.last_name
+> ORDER BY order_count DESC;
+> ```
+
+### 10. Calculate total revenue for each order status.
+
+> [!NOTE]
+> **_Your SQL_**
+>
+> ```sql
+> SELECT
+>     o.status,
+>     SUM(oi.quantity * oi.unit_price) AS total_revenue
+> FROM orders o
+> JOIN order_items oi ON o.order_id = oi.order_id
+> GROUP BY o.status
+> ORDER BY o.status;
+> ```
+
+## JOIN Queries
+
+### 11. List all products with their category names. Products in two categories should appear twice. Sort by category, then product name.
+
+> [!NOTE]
+> **_Your SQL_**
+>
+> ```sql
+> SELECT
+>     p.name AS product_name,
+>     c.name AS category_name
+> FROM products p
+> JOIN product_categories pc ON p.product_id = pc.product_id
+> JOIN categories c ON pc.category_id = c.category_id
+> ORDER BY category_name, product_name;
+> ```
+
+### 12. List each order with the customer's full name, order date, and status.
+
+> [!NOTE]
+> **_Your SQL_**
+>
+> ```sql
+> SELECT
+>     c.first_name || ' ' || c.last_name AS customer_name,
+>     o.order_id,
+>     o.order_date,
+>     o.status
+> FROM orders o
+> JOIN customers c ON o.customer_id = c.customer_id
+> ORDER BY o.order_date DESC;
+> ```
+
+### 13. Show a detailed breakdown of order #1, including product name, quantity, unit price, and line total.
+
+> [!NOTE]
+> **_Your SQL_**
+>
+> ```sql
+> SELECT
+>     p.name AS product_name,
+>     oi.quantity,
+>     oi.unit_price,
+>     oi.quantity * oi.unit_price AS line_total
+> FROM order_items oi
+> JOIN products p ON oi.product_id = p.product_id
+> WHERE oi.order_id = 1;
+> ```
+
+### 14. Find all customers who have never placed an order. Use LEFT JOIN and IS NULL.
+
+> [!NOTE]
+> **_Your SQL_**
+>
+> ```sql
+> SELECT
+>     c.first_name,
+>     c.last_name,
+>     c.email
+> FROM customers c
+> LEFT JOIN orders o ON c.customer_id = o.customer_id
+> WHERE o.order_id IS NULL;
+> ```
+
+## Advanced Aggregate Query
+
+### 15. For each category, show the category name, number of products, average price, and total inventory value (price × stock). Only include categories with a total inventory value greater than €500.
+
+> [!NOTE]
+> **_Your SQL_**
+>
+> ```sql
+> SELECT
+>     c.name AS category_name,
+>     COUNT(p.product_id) AS product_count,
+>     ROUND(AVG(p.price), 2) AS average_price,
+>     SUM(p.price * p.stock) AS total_inventory_value
+> FROM categories c
+> JOIN product_categories pc ON c.category_id = pc.category_id
+> JOIN products p ON pc.product_id = p.product_id
+> GROUP BY c.category_id, c.name
+> HAVING SUM(p.price * p.stock) > 500
+> ORDER BY total_inventory_value DESC;
+> ```
 
 ---
 
@@ -192,57 +234,56 @@ Answer in your own words:
 > [!NOTE]
 > **_Your Answer_**
 >
-> _(Write your answer here.)_
+>The order is FROM, WHERE, GROUP BY, HAVING, SELECT, DISTINCT, ORDER BY, and LIMIT. SQL follows this order to find the data, filter rows, group them, and show the final result. Understanding this order helps me write correct queries and understand how SQL works.
 
 2. What is the difference between WHERE and HAVING? Give an example of when you would use each.
 
 > [!NOTE]
 > **_Your Answer_**
 >
-> _(Write your answer here.)_
+>WHERE filters individual rows before grouping, while HAVING filters groups after GROUP BY. For example, I use WHERE to find products that cost more than €50. I use HAVING to show only categories that have more than five products.
 
 3. Explain the difference between COUNT(\*), COUNT(column), and COUNT(DISTINCT column).
 
 > [!NOTE]
 > **_Your Answer_**
 >
-> _(Write your answer here.)_
+>COUNT(*) counts all rows in the result. COUNT(column) counts only rows where the column is not NULL. COUNT(DISTINCT column) counts unique, non-NULL values. These functions help me count records and find how many different values exist in a table.
 
 4. What is the difference between INNER JOIN and LEFT JOIN? When would you choose one over the other?
 
 > [!NOTE]
 > **_Your Answer_**
 >
-> _(Write your answer here.)_
+>INNER JOIN returns only rows that have matching values in both tables. LEFT JOIN returns all rows from the left table, even if there is no match in the right table. I use INNER JOIN when I need matching records and LEFT JOIN when I also want to find records without a match, such as customers who have not placed any orders.
 
 5. Why should you avoid SELECT \* in production code?
 
 > [!NOTE]
 > **_Your Answer_**
 >
-> _(Write your answer here.)_
+> SELECT * returns all columns from a table, even if I do not need them. This can retrieve unnecessary data and make the query harder to understand. If someone changes the table later, the results may also change. It is better to select only the columns I need.
 
 6. What does DISTINCT do? On what level does it operate (columns or entire rows)?
 
 > [!NOTE]
 > **_Your Answer_**
 >
-> _(Write your answer here.)_
+> DISTINCT removes duplicate rows from the query result. It works on the combination of all selected columns. For example, SELECT DISTINCT status FROM orders shows each order status only once, even if many orders have the same status.
 
 7. Can you use a column alias in a WHERE clause? Why or why not?
 
 > [!NOTE]
 > **_Your Answer_**
 >
-> _(Write your answer here.)_
+> No, normally I cannot use a column alias directly in WHERE because WHERE is processed before SELECT, where the alias is created. For example, if I create an alias called total_price in SELECT, I cannot normally use it in WHERE. Instead, I can use the original expression in the WHERE condition.
 >
-> 8. Explain what happens when you GROUP BY a column and there's a column in SELECT that isn't aggregated and isn't in GROUP BY.
+ 8. Explain what happens when you GROUP BY a column and there's a column in SELECT that isn't aggregated and isn't in GROUP BY.
 
 > [!NOTE]
 > **_Your Answer_**
 >
-> _(Write your answer here.)_
-
+> Every selected column must either be included in GROUP BY or used with an aggregate function such as COUNT, SUM, or AVG. Otherwise, SQL usually returns an error because it cannot determine which value to display for each group.
 ---
 
 ## Exercise 3: Query Writing Exercises (Optional)
