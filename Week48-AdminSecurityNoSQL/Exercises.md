@@ -2,7 +2,7 @@
 
 > [!IMPORTANT]
 > **_How to Complete These Exercises_**
-> Write your answers directly in the highlighted **Your Answer** / **Your SQL** fields below each task. Replace the placeholder text with your own work before submitting. This week includes the **last required TrailShop project work**: Tasks 1–2, the theory review, and the final project submission at the end of this file. Other sections are marked recommended practice.
+> Write your answers directly in the highlighted **Your Answer** / **Your SQL** fields below each task. Replace the placeholder text with your own work before submitting. This week includes the **last required TrailShop project work**: Tasks 1–2 and the theory review in this file, and the final project submission in [FinalProject.md](FinalProject.md). That file asks for the full schema script (including at least one new table), the ER diagram, the query file, and the reflection. Other sections are marked recommended practice.
 
 These exercises let you practice the core topics from this week: managing access with roles and privileges, backing up and restoring databases, defending against SQL injection, and exploring NoSQL concepts — including PostgreSQL's own JSONB support. Work through them in order; the TrailShop project task builds on everything else.
 
@@ -759,55 +759,6 @@ WHERE review_data @> '{"rating": 5}';
 
 ---
 
-## Final TrailShop Project Submission
-
-This is the **last required project work** for the course. After completing Tasks 1–2 and the theory review, submit your complete TrailShop project package as described below. Weeks 49–51 are reserved for optional exam review — no further project submissions are required.
-
-### Submission Requirements
-
-Your final TrailShop project submission must include:
-
-1. **Complete SQL script** (`trailshop_final.sql`) that:
-   - Creates all tables with appropriate data types and constraints
-   - Establishes all relationships (foreign keys)
-   - Inserts sample data (at least 5 rows per table)
-   - Includes at least 2 views
-   - Includes at least 3 indexes (with justification in comments)
-   - Creates at least 2 roles with appropriate privileges
-   - Contains at least 1 transaction demonstration
-
-2. **ER diagram** (image or PDF) showing your final schema with:
-   - All entities and their attributes
-   - Primary keys marked
-   - Relationships with cardinality notation
-   - Foreign keys indicated
-
-3. **Query collection** (`trailshop_queries.sql`) containing at least 10 queries that demonstrate:
-   - Multi-table joins (at least 3 tables)
-   - Aggregation with GROUP BY and HAVING
-   - Subqueries (at least one correlated)
-   - A CTE
-   - CASE expressions
-   - Set operations (at least one)
-
-4. **Reflection document** (`reflection.md`) — 300–500 words answering:
-   - What was the most challenging part of building this database?
-   - If you were to redesign it, what would you change and why?
-   - How does your final schema differ from your Week 38 version? What drove the changes?
-   - What did you learn about database design that you didn't expect?
-
-### Grading Criteria
-
-| Criterion                                              | Weight |
-| ------------------------------------------------------ | ------ |
-| Schema design (appropriate tables, types, constraints) | 25%    |
-| Relationships and referential integrity                | 20%    |
-| Query variety and correctness                          | 25%    |
-| Security, indexes, and transactions                    | 15%    |
-| Reflection quality and depth                           | 15%    |
-
----
-
 ## Summary
 
 After completing these exercises you should be able to:
@@ -818,7 +769,7 @@ After completing these exercises you should be able to:
 - Design data using both relational tables and JSON documents
 - Query and manipulate JSONB data in PostgreSQL
 
-Good work — these are skills you will use in every database project going forward. Submit your final TrailShop project package when you have finished the required tasks.
+Good work — these are skills you will use in every database project going forward. When you have finished the required tasks, submit your final TrailShop project package as described in [FinalProject.md](FinalProject.md).
 
 ---
 
@@ -828,7 +779,7 @@ Good work — these are skills you will use in every database project going forw
 
 - [ ] Roles created and privileges tested (Tasks 1–2)
 - [ ] Theory review questions answered
-- [ ] Final project package submitted (`trailshop_final.sql`, ER diagram, `trailshop_queries.sql`, `reflection.md`)
+- [ ] Final project package completed — see [FinalProject.md](FinalProject.md)
 
 **Recommended practice**
 

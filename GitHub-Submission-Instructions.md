@@ -77,6 +77,7 @@ databases-trailshop/                    ← your GitHub repo root
   ...
   Week48-AdminSecurityNoSQL/
     Exercises.md
+    FinalProject.md                   ← course brief for the final submission
     trailshop_final.sql               ← add in Week 48
     trailshop_queries.sql
     reflection.md
@@ -89,11 +90,12 @@ databases-trailshop/                    ← your GitHub repo root
 | File | Copy? | Notes |
 |------|-------|-------|
 | **`Exercises.md`** | **Yes** | Required — this is where you submit answers |
+| **`FinalProject.md`** | **Yes, Week 48** | The final submission brief. Read it before you build the Week 48 package |
 | **`Theory.md`** | Optional | Reference only; not required for submission |
 | **Your `.sql` files** | As needed | Create in the week folder or a `sql/` subfolder |
 | **ER diagrams** | As needed | e.g. `diagrams/` subfolder inside the relevant week |
 
-**Minimum for submission weeks (36–48):** copy each week's folder and at least **`Exercises.md`**. You may omit `Theory.md` to keep the repository smaller.
+**Minimum for submission weeks (36–48):** copy each week's folder and at least **`Exercises.md`**. For Week 48, also keep **`FinalProject.md`**. You may omit `Theory.md` to keep the repository smaller.
 
 ### Which weeks require submission?
 
@@ -205,13 +207,15 @@ Do this **every week** for Weeks 36–48. Do not wait until Week 48 to push ever
 
 ## Step 7 — Week 48 Final TrailShop Submission
 
-The final project package is submitted **in Week 48** as part of your repository. See `Lectures/Week48-AdminSecurityNoSQL/Exercises.md` for full requirements.
+The final project package is submitted **in Week 48** as part of your repository. Full requirements are in `Lectures/Week48-AdminSecurityNoSQL/FinalProject.md`.
+
+`trailshop_final.sql` rebuilds the seven existing TrailShop tables and adds at least one new related table. At least one query in `trailshop_queries.sql` uses that new table. `reflection.md` explains why the new table or tables were added.
 
 Place these files in **`Week48-AdminSecurityNoSQL/`** (or paths your instructor specifies):
 
 | File | Description |
 |------|-------------|
-| `trailshop_final.sql` | Full schema, data, views, indexes, roles, transaction demo |
+| `trailshop_final.sql` | Full schema, including at least one new related table, plus data, views, indexes, roles, and a transaction demo |
 | `trailshop_queries.sql` | At least 10 demonstration queries |
 | `reflection.md` | 300–500 word reflection |
 | ER diagram | Image or PDF (e.g. `diagrams/er-diagram.png`) |
@@ -291,6 +295,6 @@ pgdata/
 2. **Copy weekly folders** from `Lectures/` (at least `Exercises.md` for Weeks 36–48).
 3. **Complete exercises** in place each week.
 4. **Commit and push** so your instructor can review your work.
-5. Add **Week 48 final files** (`trailshop_final.sql`, queries, reflection, ER diagram) to the same repository.
+5. Add **Week 48 final files** (`trailshop_final.sql`, queries, reflection, ER diagram) as described in `Lectures/Week48-AdminSecurityNoSQL/FinalProject.md`.
 
 For TrailShop project details, see `Initial-Course-project-summary.md`. For the weekly schedule, see `CourseSyllabus.md`.
